@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Signup form</title>
+  <meta name="description" content="Signup form">
+  <meta name="author" content="Matthieu">
+</head>
+
+
+<body>
+
+<form action="/action_page.php">
+  <div class="container">
+    <label><b>First name</b></label>
+    <input type="text" placeholder="Enter first name" name="first name" required><br><br>
+	
+	<label><b>Last name</b></label>
+    <input type="text" placeholder="Enter last name" name="last name" required><br><br>
+	
+    <label><b>Email</b></label>
+	<input type="email" placeholder="Enter your email" name="email" required><br><br>
+	
+	<label><b>Birthday</b></label>
+	<input type="date" name="birthday"><br><br>
+	
+	<label><b>What is your favorite sport?</b></label>
+	<select>
+		<option value="Running">Running</option>
+		<option value="Swimming">Swimming</option>
+		<option value="Play Football">Play Football</option>
+		<option value="Other">Other</option>
+	</select><br><br>
+	
+	<label><b>Tell us about yourself (optional)</b></label><br>
+	<textarea rows="4" cols="50"></textarea><br><br>
+		
+	
+    
+
+    <div class="clearfix">
+	  <button type="reset" value="Reset">Reset</button>
+      <button type="submit">Sign Up</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>
