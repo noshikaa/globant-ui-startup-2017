@@ -1,0 +1,93 @@
+
+body {
+    font: bold 14px Verdana, Arial, sans-serif;
+}
+
+
+[class$="r"] {
+    background: magenta;
+}
+/*
+:not(class$="r")[class*="a"]{
+		 background: blue;
+}*/
+
+[class*="nav"] {
+	
+    background: blue;
+}
+
+/*
+.container {
+  position: relative;
+}*/
+
+section {
+  /* position is static by default */
+  margin-left: 0px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+}
+body {
+  margin-bottom: 120px;
+}
+
+article {
+	position:absolute;
+	text-align:center;
+	font-size:15px;
+	left:20%;
+	width: 60%;
+}
+
+nav {
+  position: absolute;
+  left: 0px;
+  width: 20%;
+}
+
+aside{
+  position: absolute;
+  right: 0px;
+  width: 20%;
+}
+
+
+
+.header {
+	top:0px;
+	position:relative;
+	text-align:center;
+	font-size:46px;
+}
+
+.aside {
+	font-size:10px;
+}
+
+.footer {
+	text-align:center;
+	font-size:10px;
+}
+
+.nav{
+	
+	font-size:12px;
+}
+
+.section{
+	
+	font-size:14px;
+}
+
+
+
+
+
+
+
