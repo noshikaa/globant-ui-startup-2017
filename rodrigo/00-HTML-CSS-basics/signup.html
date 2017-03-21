@@ -7,29 +7,30 @@
   <body>
     <form>
         <div class="container">
+
           <div class="firstname">
-            <label><b>First name</b></label>
+            <p><b>First name</b></p>
             <input type="text" placeholder="Enter First Name" name="firstname" required>
           </div>
 
         <div class="lastname">
-          <label><b>Last Name</b></label>
+          <p><b>Last Name</b></p>
           <input type="text" placeholder="Enter Last Name" name="lastname" required>
         </div>
 
         <div class="email">
-          <label><b>Email</b></label>
-          <input type="text" placeholder="Enter Email" name="email" required>
+          <p><b>Email</b></p>
+          <input type="email" placeholder="Enter Email" name="email" required>
         </div>
 
         <div class="birthday">
-          <b>Enter your birthday: </b>
+          <p><b>Enter your birthday: </b></p>
           <input type="date" required>
           <!--Note: type="date" is not supported in Firefox, or Internet Explorer 11 and earlier versions -->
         </div>
 
         <div class="dropdown-sport">
-        <b>Select your favorite sport: </b>
+        <p><b>Select your favorite sport: </b></p>
           <select>
             <option value="basketball">Basketball</option>
             <option value="soccer">Soccer</option>
@@ -39,16 +40,19 @@
         </div>
 
         <div class="bio">
-          <b>Please tell us a little about yourself:</b>
+          <p><b>Please tell us a little about yourself:</b></p>
           <textarea name="bio" rows="8" cols="80"></textarea>
         </div>
 
         <div class="clearfix">
-          <button type="reset"  class="cancelbtn">Cancel</button>
+          <button type="reset"  class="cancelbtn">Clear</button>
           <button type="submit" class="signupbtn">Sign Up</button>
+<!-- Implement a javascript function for the onClick() method on Sign Up button, to send the data on the form-->
         </div>
 
       </div>
     </form>
+
+
   </body>
 </html>
