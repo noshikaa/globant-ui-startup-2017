@@ -3,17 +3,17 @@
   <body>
 
     <form>
-      First name:<br>
-      <input type="text" name="firstname">
+      First Name:<br>
+      <input type="text" name="firstname" pattern="[A-Za-z]+" maxlength="15" required placeholder="mandatory">
       <br>
-      Last name:<br>
-      <input type="text" name="lastname">
+      Last Name:<br>
+      <input type="text" name="lastname" pattern="[A-Za-z]+" maxlength="15" required placeholder="mandatory">
       <br>
       Email:<br>
-      <input type="text" name="email">
+      <input type="email" name="email" maxlength="40" required placeholder="Enter a valid email">
       <br>
       Birthday:<br>
-      <input type="date" name="birthday">
+      <input type="date" name="birthday" required placeholder="mandatory">
       <br>
       Favorite Sport:<br>
       <select>
