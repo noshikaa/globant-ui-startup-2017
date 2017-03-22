@@ -3,6 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Sign Up</title>
+    <script type="text/javascript">
+      var datefield=document.createElement("input")
+      datefield.setAttribute("type", "date")
+      if (datefield.type!="date"){ //if browser doesn't support input type="date", load files for jQuery UI Date Picker
+          document.write('<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />\n')
+          document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"><\/script>\n')
+          document.write('<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"><\/script>\n')
+      }
+    </script>
+
+    <script>
+      if (datefield.type!="date"){ //if browser doesn't support input type="date", initialize date picker widget:
+          jQuery(function($){ //on document.ready
+              $('#birthday').datepicker();
+          })
+      }
+    </script>
   </head>
   <body>
     <form>
@@ -25,8 +42,9 @@
 
         <div class="birthday">
           <p><b>Enter your birthday: </b></p>
-          <input type="date" required>
+          <input type="date" id="birthday" required>
           <!--Note: type="date" is not supported in Firefox, or Internet Explorer 11 and earlier versions -->
+          <!-- Added a JS function to allow Firefox to use a datepicker -->
         </div>
 
         <div class="dropdown-sport">
@@ -41,7 +59,7 @@
 
         <div class="bio">
           <p><b>Please tell us a little about yourself:</b></p>
-          <textarea name="bio" rows="8" cols="80"></textarea>
+          <textarea name="bio" rows="8" cols="50"></textarea>
         </div>
 
         <div class="clearfix">
