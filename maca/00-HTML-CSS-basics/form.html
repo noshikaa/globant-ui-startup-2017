@@ -14,11 +14,11 @@
 	<form action="./submited.html" method="post">
 		<p>
         <label for="firstname"> First name: </label>
-	  	<input type="text" id="firstname" required>
+	  	<input type="text" id="firstname" pattern="[A-Za-z]+" required>
         </p>
         <p>
 	  	<label for="lastname"> Last name: </label>
-	  	<input type="text" id="lastname" required>
+	  	<input type="text" id="lastname" pattern="[A-Za-z]+" required>
         </p>
         <p>
 	  	<label for="email">E-mail:</label>
@@ -40,7 +40,7 @@
 		</select>
         </p>
         <p>
-		<label for="bio">Bio: </label><br>
+		<label for="bio" pattern="[A-Za-z]+">Bio: </label><br>
 		 <textarea rows="4" cols="50" placeholder="Pleas describe yourself here..." id="bio"></textarea>
          </p>
 
