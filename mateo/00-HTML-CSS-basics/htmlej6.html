@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html >
+<head>
+  
+  <title>Sign-Up Form</title>
+ 
+</head>
+
+<body>
+
+         
+          <h1>Sign Up Here</h1>
+          
+         
+         <form name="SubmitForm"> 
+             <div>
+              
+                First Name:<br>
+              <input type="text" name="firstname" required>
+            </div>
+
+             <div>
+              
+                Last Name:<br>
+              <input type="text" name="lastname" required>
+            </div>
+
+             <div>
+              
+                Email:<br>
+              <input type="email" name="email" required placeholder="Enter a valid email address">
+            </div>
+
+             <div>
+             
+                <!-- PROBLEMA CON EL input=type"date" en Firefox, IE ,etc -->
+                Birthday:<br>
+                <input type="date" name="birthday" required/>
+
+            </div>
+
+            <div>
+              
+                Favorite Sport:<br>
+                          <select>
+                            <option value="football">Football</option>
+                            <option value="tenis">Tenis</option>
+                            <option value="basketball">basketball</option>
+                            <option value="baseball">Baseball</option>
+                            <option value="other">Other</option>
+                        </select>
+              
+            </div>
+            
+            <div>
+            About you:<br>
+            <textarea placeholder="Small bio of you..."></textarea>
+            </div>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset" >
+         </form> 
+     
+
+</body>
+</html>
