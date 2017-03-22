@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 </head>
 <body>
     <header>
@@ -19,11 +18,11 @@
         <form>
             <div class="form-group">
                 <label for="FirstName">First Name:</label>
-                <input type="First Name" class="form-control" id="FirstName" placeholder="Enter First Name">
+                <input type="First Name" class="form-control" id="FirstName" placeholder="Enter First Name" required pattern="[A-Za-z]+" title="Solo debe contener letras">
             </div>
             <div class="form-group">
                 <label for="LastName">Last Name:</label>
-                <input type="Last Name" class="form-control" id="LastName" placeholder="Enter Last Name">
+                <input type="Last Name" class="form-control" id="LastName" placeholder="Enter Last Name" pattern="[A-Za-z]+" title="Solo debe contener letras" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -31,7 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="Birthday">Birthday:</label>
-                <input type="date" data-date-inline-picker="false" class="form-control" id="Birthday" placeholder="Choose your Birthday"
+                <input type="date" data-date-inline-picker="false" class="form-control" id="Birthday" placeholder="Choose your Birthday" required
                 />
             </div>
             <div class="form-group">
