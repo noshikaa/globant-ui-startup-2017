@@ -1,0 +1,19 @@
+h2{
+  color: red;
+}
+
+#p1{
+  color: orange;
+}
+
+
+#p2{
+  color: blue;
+}
+
+.mainT {
+  color: pink;
+  font-size:50px;
+  background: red;
+  text-align: center;
+}
