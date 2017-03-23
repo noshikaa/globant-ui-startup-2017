@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,22 +28,22 @@
 
           <div class="firstname">
             <p><b>First name</b></p>
-            <input type="text" placeholder="Enter First Name" name="firstname" required>
+            <input type="text" placeholder="Enter First Name" name="firstname" required  pattern="[A-Za-z]" title="First name (letters only)">
           </div>
 
         <div class="lastname">
           <p><b>Last Name</b></p>
-          <input type="text" placeholder="Enter Last Name" name="lastname" required>
+          <input type="text" placeholder="Enter Last Name" name="lastname" required  pattern="[A-Za-z]" title="Last name (letters only)">
         </div>
 
         <div class="email">
           <p><b>Email</b></p>
-          <input type="email" placeholder="Enter Email" name="email" required>
+          <input type="email" placeholder="Enter Email" name="email" required title="Email">
         </div>
 
         <div class="birthday">
           <p><b>Enter your birthday: </b></p>
-          <input type="date" id="birthday" required>
+          <input type="date" id="birthday" required title="Birthday">
           <!--Note: type="date" is not supported in Firefox, or Internet Explorer 11 and earlier versions -->
           <!-- Added a JS function to allow Firefox to use a datepicker -->
         </div>
@@ -60,7 +60,7 @@
 
         <div class="bio">
           <p><b>Please tell us a little about yourself:</b></p>
-          <textarea name="bio" rows="8" cols="50"></textarea>
+          <textarea name="bio" rows="8" cols="50" title="Bio"></textarea>
         </div>
 
         <div class="clearfix">
@@ -68,7 +68,6 @@
           <button type="submit" class="signupbtn">Sign Up</button>
 <!-- Implement a javascript function for the onClick() method on Sign Up button, to send the data on the form-->
         </div>
-
       </div>
     </form>
 
