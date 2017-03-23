@@ -1,19 +1,92 @@
-h2{
-  color: red;
+#mainHeader{
+  background: darkgreen;
+  color: white;
+  text-align: center;  
 }
 
-#p1{
-  color: orange;
+.generalContainer{
+
+  position:relative;
+  height:500px;
 }
 
+.nav{
+  position: absolute;
+  left: 0%;
+  width: 20%;
+  background: #ccffee;
+  height: 50%;
 
-#p2{
-  color: blue;
+}  
+
+.section{  
+  position: absolute;
+  height: 100%;
+  left: 20%;
+  width: 60%;
+  text-align: center;
+
+
 }
 
-.mainT {
-  color: pink;
-  font-size:50px;
-  background: red;
+.header{
+  position: absolute;
+  background: #ccffee;
+  height: 50px;
+  width: 98%;
+  left: 1%;
+  font-size: 18px;
+
+}
+
+.article{
+  position: absolute;
+  background: #ccffee;
+  height: 400px;
+  width: 98%;
+  margin-top: 54px;
+  left: 1%;
+
+}
+
+.footer{
+  position: absolute;
+  background: #ccffee;
+  height: 36px;
+  width: 98%;
+  left: 1%;
+  margin-top: 458px;
+
+ 
+}
+
+.aside{
+  position: absolute;
+  left: 80%;
+  width: 20%;
+  text-align: center;
+  background: #ccffee;
+  height: 50%;
+ 
+
+}
+
+body{
   text-align: center;
 }
+
+#mainFooter{
+  margin-top: 10px;
+  background: darkgreen;
+  text-align: center;
+  color: white;
+  height: 45px;
+}
+
+footer{
+  font-size: 20px;
+  text-align: center;
+  align-items: center;
+
+}
+
