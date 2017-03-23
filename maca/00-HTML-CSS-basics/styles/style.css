@@ -1,7 +1,6 @@
 #mainHeader{
   background: darkgreen;
   color: white;
-  text-align: center;  
 }
 
 .generalContainer{
@@ -24,9 +23,6 @@
   height: 100%;
   left: 20%;
   width: 60%;
-  text-align: center;
-
-
 }
 
 .header{
@@ -35,7 +31,6 @@
   height: 50px;
   width: 98%;
   left: 1%;
-  font-size: 18px;
 
 }
 
@@ -64,7 +59,6 @@
   position: absolute;
   left: 80%;
   width: 20%;
-  text-align: center;
   background: #ccffee;
   height: 50%;
  
@@ -72,21 +66,22 @@
 }
 
 body{
-  text-align: center;
+  font-size: 14px;
+  font-family: "Trebuchet MS";
 }
 
 #mainFooter{
   margin-top: 10px;
   background: darkgreen;
-  text-align: center;
   color: white;
   height: 45px;
 }
 
 footer{
-  font-size: 20px;
-  text-align: center;
-  align-items: center;
-
+  font-style: italic;
 }
 
+header, footer {
+    text-align: center;
+
+}
