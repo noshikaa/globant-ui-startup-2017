@@ -14,23 +14,23 @@
 	<form action="./submited.html" method="post">
 		<p>
         <label for="firstname"> First name: </label>
-	  	<input type="text" id="firstname" pattern="[A-Za-z]+" title="Letters only, please" required>
+	  	<input type="text" name="firstName" id="firstname" pattern="[A-Za-z]+" title="Letters only, please" required>
         </p>
         <p>
 	  	<label for="lastname"> Last name: </label>
-	  	<input type="text" id="lastname" pattern="[A-Za-z]+" title="Letters only, please" required>
+	  	<input type="text" name="lastName" id="lastname" pattern="[A-Za-z]+" title="Letters only, please" required>
         </p>
         <p>
 	  	<label for="email">E-mail:</label>
-  		<input type="email" id="email" required>
+  		<input type="email" name="email" id="email" required>
         </p>
         <p>
   		<label for="bday">Birthday:</label>
-  		<input type="date" id="bday" required>
+  		<input type="date" name="bday" id="bday" required>
         </p>
         <p>
   		<label for="sport">Favorite sport:</label>
-  		<select id="sport">
+  		<select id="sport" name="sport">
   			<option value="tennis">Tennis</option>
   			<option value="football">Football</option>
   			<option value="basketball">Basketball</option>
@@ -40,16 +40,14 @@
 		</select>
         </p>
         <p>
-		<label for="bio" pattern="[A-Za-z]+">Bio: </label><br>
-		 <textarea rows="4" cols="50" placeholder="Pleas describe yourself here..." id="bio"></textarea>
+		<label for="bio" >Bio: </label><br>
+		 <textarea name="bio" rows="4" cols="50" placeholder="Please describe yourself here..." id="bio"></textarea>
          </p>
 
-        <input type="reset" size="10">
+        <input type="reset" value="Reset">
         <input type="submit" value="Submit">
 		
 	</form>
-
-
 
 </body>
 </html>
