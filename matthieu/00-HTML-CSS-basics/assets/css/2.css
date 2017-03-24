@@ -1,20 +1,24 @@
 
-body {
-    font: bold 14px Verdana, Arial, sans-serif;
-}
 
 
+
+/*
 [class$="r"] {
     background: magenta;
-}
+}*/
 /*
 :not(class$="r")[class*="a"]{
 		 background: blue;
 }*/
-
+/*
 [class*="nav"] {
 	
     background: blue;
+}
+
+[class="header"] {
+	
+    background: magenta;
 }
 
 [class="aside"] {
@@ -25,6 +29,21 @@ body {
 [class="footer"] {
 	
     background: purple;
+}*/
+
+
+
+html {
+    height: 100%;
+    width: 100%;
+}
+body {
+	 font: bold 14px Verdana, Arial, sans-serif;
+	margin-bottom: 120px;
+    height: 100%;
+    width: 100%;
+    min-height: 1000px;
+    min-width: 1200px;
 }
 
 section {
@@ -34,18 +53,20 @@ section {
 	left:20%;
   border-color:orange;
 	border-style: solid;
+	font-size:14px;
 }
 
 footer {
+	 background: purple;
   position: absolute;
   bottom: 0px;
   left: 0px;
   height: 70px;
   width: 100%;
+  text-align:center;
+	font-size:10px;
 }
-body {
-  margin-bottom: 120px;
-}
+
 
 article {
 	position:relative;
@@ -57,30 +78,35 @@ article {
 }
 
 nav {
+	 background: blue;
   position: absolute;
   left: 0px;
- 
   width: 20%;
   height:200px;
   top:0px;
+  font-size:12px;
  
 }
 
 aside{
+	  background: green;
   position: absolute;
-  left: 80%;
+  left: 80.3%;
   top:0px;
   width: 20%;
   height:200px;
+  font-size:10px;
+ 
 }
 
 header{
+	 background: magenta;
     top:0px;
 	left:0px;
 	position:relative;
 	text-align:center;
 	width:100%;
-	
+	font-size:46px;
 	
 
 }
@@ -91,30 +117,6 @@ header{
 	
 }
 
-.header {
-	
-	font-size:46px;
-}
-
-.aside {
-	font-size:10px;
-}
-
-.footer {
-	text-align:center;
-	font-size:10px;
-}
-
-.nav{
-	
-	font-size:12px;
-}
-
-.section{
-	
-	font-size:14px;
-	
-}
 
 
 
