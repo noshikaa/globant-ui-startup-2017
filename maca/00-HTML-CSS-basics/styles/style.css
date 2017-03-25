@@ -92,6 +92,9 @@ header, footer {
   color: blue
 }
 
+[class*="a"]:not([class*="r"]){
+  background: blue;
+}
 
 [class$="r"]{
   background: magenta;
@@ -100,8 +103,4 @@ header, footer {
 .oh-no{
   background: green !important;
 }
-/*[class*="a"], 
-header:not[class*="m"]{
-  background: blue;
-}*/
 
