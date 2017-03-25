@@ -33,7 +33,6 @@ nav {
 }
 
 section {
-  display:block;
   background: grey;
   margin-left: 23%;
   margin-right: 23%;
@@ -41,19 +40,16 @@ section {
 }
 
 #sectionHeader {
-  display:block;
   margin:1%;
   background: white;
 }
 
 #sectionFooter{
-  display:block;
   margin:1%;
-  background: white;  
+  background: white;
 }
 
 article {
-  display:block;
   margin:1%;
   background: white;
 }
