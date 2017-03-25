@@ -1,0 +1,51 @@
+html *
+{
+   font-size: 14px;
+   font-family: Arial;
+}
+
+header{
+  background-color: LightGrey;
+  text-align: center;
+}
+
+.header{
+  font-size: 46px;
+}
+
+footer{
+  background-color: LightGrey;
+  text-align: center;
+}
+
+.footer{
+  font-size: 10px;
+}
+
+aside{
+  background-color: LightSkyBlue;
+}
+
+.sidebar{
+  font-size: 10px;
+}
+
+nav{
+  background-color: LightSkyBlue;
+}
+
+.navigation{
+  font-size: 12px;
+}
+
+.content{
+  font-size: 14px;
+}
+
+[class$="r"] {
+  background-color: magenta;
+}
+
+[class*="a"]:not([class$="r"]){
+  background-color: blue;
+}
