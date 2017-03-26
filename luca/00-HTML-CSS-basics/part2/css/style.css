@@ -1,0 +1,104 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+    font: 16px arial, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+}
+
+nav {
+    width: 25%;
+    left: 0px;
+    float: left;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+aside {
+    width: 25%;
+    right: 0;
+    float: right;
+}
+
+article{
+    width: 100%;
+}
+
+section {
+    width: 50%;
+    left: 25%;
+    display: grid;
+}
+
+.middle {
+    bottom: 70px;
+    top: 100px;
+    position: absolute;
+}
+
+
+.bot {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    display: inline-table;
+}
+
+.top {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    height: 100px;
+}
+
+/*  Exercises!  */
+
+.header {
+    font: 46px arial, sans-serif;
+    background-color: magenta;
+}
+
+.footer {
+    font: 10px arial, sans-serif;
+    background-color: magenta;
+}
+
+.content {
+    font: 14px arial, sans-serif;
+}
+
+.navigation {
+    background-color: blue;
+}
+
+.sidebar {
+    font: 10px arial, sans-serif;
+    background-color: magenta;
+}
+
+h1 {
+    margin: 0px;
+}
