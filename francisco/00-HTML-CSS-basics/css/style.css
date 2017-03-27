@@ -1,0 +1,62 @@
+#container {
+  background: #1e1e1e;
+}
+
+.borderRadius {
+  border-radius: 3px;
+}
+
+header {
+  display:block;
+  background: grey;
+  padding: 2px;
+  margin: 8px;
+}
+
+aside {
+  display:inline-block;
+  width:20%;
+
+  float:right;
+  background: grey;
+  margin-right: 8px;
+  height:inherit;
+}
+
+nav {
+  display:inline-block;
+  width:20%;
+  float:left;
+  background: grey;
+  margin-left: 8px;
+  height:inherit;
+}
+
+section {
+  background: grey;
+  margin-left: 23%;
+  margin-right: 23%;
+  padding: 1%;
+}
+
+#sectionHeader {
+  margin:1%;
+  background: white;
+}
+
+#sectionFooter{
+  margin:1%;
+  background: white;
+}
+
+article {
+  margin:1%;
+  background: white;
+}
+
+footer {
+  display: inline-block;
+  width:100%;
+  background: grey;
+  margin: 8px;
+}
