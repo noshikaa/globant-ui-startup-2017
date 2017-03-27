@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+  <head>
+  <style type="text/css">
+    body{
+      background: #333333;
+    }
+    .container{
+      position: relative;
+      width: 800px;
+      height: 600px;
+      border-radius: 10px;
+    }
+    .innerContainer{
+      position: absolute;
+      background-color: #696969;
+      margin: auto;
+      border-radius: 10px;
+      padding: 10px;  
+    }
+    .nav {
+      position: absolute;
+      background-color: #696969;
+      text-align: center;
+      float: left;
+      max-width: 160px;
+    }
+    .header{
+      background-color: #696969;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .innerHeader{
+      background-color: #808080;
+      border-radius: 10px;
+    }
+    .aside{
+      vertical-align: text-top;
+      float: right;
+      background-color: #696969;
+      border-radius: 10px;
+    }
+    .footer{
+      text-align: center;
+      background-color: #696969;
+      border-radius: 10px;
+    }
+    .innerFooter{
+      background-color: #808080;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .article{
+      background-color: #808080;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .section{
+      background-color: #696969; 
+      vertical-align: text-top; 
+    }
+
+  </style>
+    <meta charset="utf-8">
+    <title>my_index</title>
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+  <body>
+    <div class="container">
+
+      <header class="header">
+        <p>Header</p>
+      </header>
+
+      <nav class="nav">
+        <p>Nav</p>
+      </nav>
+
+      <aside class="aside">
+        Aside
+      </aside>
+
+      <div class="innerContainer">
+        <section class="section">
+          section
+        </section> 
+
+        <header class="innerHeader">
+          inner header
+        </header>
+
+        <article class="article">
+          article
+        </article> 
+
+        <footer class="innerFooter">
+          inner footer
+        </footer> 
+      </div>
+
+      <footer class="footer">
+        <p>Footer</p>
+      </footer>
+
+    </div>
+
+  </body>
+</html>
