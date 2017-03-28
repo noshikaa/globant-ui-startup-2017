@@ -1,5 +1,14 @@
 
 
+
+
+
+
+
+
+
+
+
 html {
     height: 100%;
     width: 100%;
@@ -7,8 +16,7 @@ html {
 body {
     height: 100%;
     width: 100%;
-    min-height: 1000px;
-    min-width: 1200px;
+   
 }
 
 header{
@@ -20,11 +28,15 @@ header{
 	height:30px;
 }
 
+
+
 .showcase{
 	float:left;
 	margin-left: 60px;
 	margin-top: 40px;
 }
+
+
 
 .text{
 	float:right;
@@ -35,13 +47,144 @@ header{
 	
 }
 
+
+
+
+
+
+.imagetext{
+	font-size: 20px;
+	position:absolute;
+	top:55px;
+	text-align: center;
+	color:red;
+    opacity: 0;
+	height:250px;
+	width:400px;
+}
+
+.imagetext:hover{
+	opacity: 1;
+	 -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
 .img{
-	padding:10px;
+   display:inline-block;
+   position: relative;
+   padding-left:25px;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.img:hover{
+  opacity: 1;
 }
 
 .pictures{
 	position:relative;
 	top:170px;
-	left:100px;
+	left:0px;
 	display:inline-block;
 }
+
+
+@media screen and (max-width: 1140px) 
+{
+    body {
+        background-color: blue;
+		text-align: center;
+    }
+
+   .showcase{
+	   float:none;
+	   margin-top: 40px;
+	     margin-left: 0px;
+   }
+
+
+    .text{
+	position:absolute;
+	left:5%;
+	float:none;
+	width:90%;
+	margin-top: 40px;
+	font-size:18px;
+		margin-right:0px;
+   }
+
+   .pictures{
+	position:relative;
+	top:220px;
+	left:0px;
+	display:inline-block;
+}
+
+
+}
+
+
+
+@media screen and (max-width: 870px) 
+{
+    body {
+        background-color: lightgreen;
+		
+    }
+
+	 .showcase{
+	   float:none;
+	   margin-top: 40px;
+	    margin-left: 0px;
+   }
+
+	 .pictures{
+	position:relative;
+	top:220px;
+	left:0px;
+	display:inline-block;
+}
+
+
+}
+
+
+
+@media screen and (max-width: 635px) 
+{
+ body {
+        background-color: red;
+		
+    }
+
+ .showcase{
+	   float:none;
+	   margin-top: 40px;
+	     margin-left: 0px;
+   }
+
+
+   .text{
+	float:none;
+	width:90%;
+	margin-top: 40px;
+	margin-right:0px;
+	font-size:18px;
+   }
+
+    .pictures{
+	position:relative;
+	top:260px;
+	left:0px;
+	display:inline-block;
+}
+
+}
+
