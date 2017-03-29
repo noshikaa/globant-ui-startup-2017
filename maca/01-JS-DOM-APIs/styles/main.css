@@ -1,0 +1,58 @@
+.container{
+  width: 98%;
+  margin-left: 1%;
+  margin-right: 1%; 
+}
+
+header{
+  text-align: center;
+  background: #99ccff;
+}
+
+.p1{
+  float: left;
+}
+
+.p2{
+  float: right;
+}
+
+.p1, .p2{
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border-style: solid;
+  border-color: #33bbff;
+}
+
+#hidden{
+  clear: both;
+  opacity: 0;
+  transition: opacity 3s;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: #99ccff;
+}
+
+button{
+  display: table;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto; 
+ }
+
+footer{
+  margin-top: 20%;
+  clear: both;
+  text-align: center;
+  font-style: italic;
+  background: #99ccff;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

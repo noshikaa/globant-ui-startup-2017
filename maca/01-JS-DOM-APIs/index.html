@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/main.css">
+
+	<title>Testing JS</title>
+
+	<script type="text/javascript">
+		window.onload = function(){			
+			document.getElementById('hidden').style.opacity = 1;
+			document.getElementById("btn").addEventListener("click", getJoke);
+		}
+
+		getJoke = function(){
+			let req = new XMLHttpRequest();
+			req.open('GET', "http://api.icndb.com/jokes/random", true);
+			req.onreadystatechange = function () {
+		        	if(req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+		        		let jsonResp = JSON.parse(req.responseText);
+		        		document.getElementById('hidden').innerHTML = jsonResp.value.joke;
+		        		document.getElementById('hidden').style.background = "red"
+
+		            
+		        }
+		    };
+			req.send();
+		}
+
+	</script>
+</head>
+
+	
+<body>
+	<div class="container">
+		<header> <h1> First try </h1></header>
+		<section>
+			<div class="p1">
+				<h2>Paragraph 1</h2>
+				<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies in ipsum vitae imperdiet. In lobortis libero at malesuada luctus. Curabitur ut metus et sem vestibulum fermentum. Sed non dui odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce interdum laoreet tempor. Donec tincidunt interdum hendrerit. Cras sodales blandit accumsan. Duis urna sapien, ullamcorper vel sapien vitae, facilisis pellentesque massa.</p>
+			</div>
+			<div class="p2">
+				<h2>Paragraph 2</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies in ipsum vitae imperdiet. In lobortis libero at malesuada luctus. Curabitur ut metus et sem vestibulum fermentum. Sed non dui odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce interdum laoreet tempor. Donec tincidunt interdum hendrerit. Cras sodales blandit accumsan. Duis urna sapien, ullamcorper vel sapien vitae, facilisis pellentesque massa.</p>
+			</div>
+		</section>
+		<section>
+			<div id="hidden">
+				<p>"Hello world"</p>
+			</div>
+		</section>
+
+		<button id="btn"> Tell me a joke! </button>
+
+
+		<footer>The end</footer>
+
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>
