@@ -12,16 +12,17 @@
 	  <title>01-index</title>
 
   </head>
-  <!--this goes inside the body tag => onload="fadeIn()"
-      this one goes inside the section tag => class="w3-animate-opacity"-->
+  <!--this goes inside the body tag => onload="fadeIn()"-->
   <body>
 
       <div>
-        <section>
+        <section id="joke">
           hello world!
         </section>
 
         <button onclick="go_to_index()">go to index</button> 
+
+        <button type="button" onclick="loadXMLDoc()">change content</button>
 
         <!--<header>
          header
