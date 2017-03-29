@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Index</title>
+
+  <script type="text/javascript">
+    function fadeIn() {
+      document.getElementById('fade').style.opacity = 1;
+    }
+    window.onload = fadeIn;
+
+    function response() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) { // Typical action to be performed when the document is ready:
+          var json = xhttp.responseText;
+          var getJoke = JSON.parse(json);
+          document.getElementById('fade').innerHTML = getJoke.value.joke;
+        }
+      };
+      xhttp.open("GET", "http://api.icndb.com/jokes/random", true);
+      xhttp.send();
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Batman</h1>
+  <section id="fade">
+    <p>Batman's secret identity is Bruce Wayne, an American billionaire, playboy, philanthropist, and owner of Wayne Enterprises. After witnessing the murder of his parents Thomas Wayne and Martha Wayne as a child, he swore vengeance against criminals, an
+      oath tempered by a sense of justice.</p>
+  </section>
+  <button type="button" name="button" onclick="response()">Click Me!</button>
+</body>
+
+</html>
