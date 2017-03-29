@@ -2,83 +2,67 @@
       background: #333333;
       color: white;
     }
-
-    .innerContainer{
-      position: static;
+    div{
       background-color: #696969;
       width: auto;
-      height: 500px;
+      height: auto;
       border-radius: 10px;
       padding: 10px; 
-      margin-left: 200px;
-      margin-right: 200px; 
-      margin-top: 20px;
-    }
-    nav {
-      position: static;
-      background-color: #696969;
-      text-align: center;
-      width: 150px;
-      height: 500px; 
-      border-radius: 10px;
-      float: left;
       margin-left: 10px;
-      margin-top: 20px;
-    }
-    aside{
-      position: static;
-      background-color: #696969;
-      text-align: center;
-      width: 150px;
-      height: 500px;
-      border-radius: 10px;
-      float: right;
-      margin-right: 10px;
-      margin-top: 20px;
-
-    }
-    #topHeader{
-      position: static;
-      width: auto;
-      height: 100px;
-      background-color: #696969;
-      text-align: center;
-      border-radius: 10px;
+      margin-right: 10px; 
       margin-top: 10px;
-      margin-left: 10px;
-      margin-right: 10px;
-      padding-top: 25px;
+      margin-bottom: 10px;
     }
-    #innerHeader{
+    section{
+      opacity: 0;
+      text-align: center;
+      background-color: #129402;
+      border-radius: 10px; 
+      padding: 10px;
+      margin: 10px;
+      animation: fadeIn 2s; 
+      animation-fill-mode: both;
+    }
+      /*this is a CSS animation, i took it from here 
+      https://www.tutorialspoint.com/css/css_animation_fade_in.htm*/
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    } 
+    button{
+      text-align: center;
+      border-radius: 5px;
+    }
+    /*
+    }
+    @keyframes mymove {
+      0%   {opacity: 0.25;}
+      25%  {opacity: 0.5;}
+      75%  {opacity: 0.75;}
+      100% {opacity: 1;}
+    }*/
+   /* header{
+      text-align: center;
+      height: 50px;
       background-color: #808080;
       border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
     }
-
     footer{
-      position: relative;
       width: auto;
-      height: 100px;
-      text-align: center;
-      background-color: #696969;
-      border-radius: 10px;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-    #innerFooter{
-      bottom: 0;
-      width: auto;
-      height: 100px;
+      height: 50px;
       background-color: #808080;
       border-radius: 10px;
       text-align: center;
+      padding: 10px;
+      margin: 10px;
     }
     article{
       background-color: #808080;
+      height: 50px;
       border-radius: 10px;
       text-align: center;
-    }
-    section{
-      text-align: center;
-      margin-left: 200px;
-      background-color: #696969;  
-    }
+      padding: 10px;
+      margin: 10px;
+    }*/
