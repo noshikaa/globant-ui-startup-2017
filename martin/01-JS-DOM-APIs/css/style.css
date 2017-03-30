@@ -35,6 +35,33 @@
       text-align: center;
       border-radius: 5px;
     }
+    .filter{
+      position: relative;
+      float: right;
+      background-color: #696969;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 50px;
+      margin-right: 10px;
+    }
+    input{
+      position: relative;
+      float: right;
+      background-color: #696969;
+      border-radius: 3px;
+    }
+    /*ul{
+      position: relative;
+      float: right;
+      background-color: #696969;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+
+    }*/
+
+
     /*
     }
     @keyframes mymove {
