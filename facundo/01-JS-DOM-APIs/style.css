@@ -5,11 +5,65 @@
 .sect{
     text-align:center;
     animation: fadein 5s;
+    font-family:sans-serif;
+    font-size: 30px;
+    font: bold;
+    width: 61%;
+    float: right;
+    background-color: darkviolet;
+    color:wheat;
+    padding: 15px;
+    margin: 15px;
+    border: 4px;
+    padding-block-start: 0px;
+}
+#titu{
+    font-family:sans-serif;
+    font-size: 30px;
+    font: bold;
+    text-decoration: underline;
 }
 header{
 font-size: 20px;
 margin:auto;
+padding: 15px;
+    margin: 15px;
+    border: 4px;
+    background-color: limegreen;
+    text-align: center;
 }
 .hidden{
     opacity: 0;
+    width: 60%;
+    float: left;
+    background-color: red;
+}
+#lista{
+    float:right;
+    padding: 15px;
+    margin: 15px;
+    border: 4px;
+    width: 30%;
+    background-color: orange;
+    
+}
+footer{
+    padding: 15px;
+    margin: 15px;
+    border: 4px;
+    clear: both;
+    background-color: lightcoral;
+}
+button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px;
+    margin: 15px;
+    border: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    clear: both;
+    position: relative;
 }
