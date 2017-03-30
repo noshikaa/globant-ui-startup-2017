@@ -33,7 +33,7 @@ function button2click()
 {
   let config = {url:"https://api.github.com/search/repositories?q=\""+$('#search').val()+"\"", mimetype:"text/plain; charset=x-user-defined"};
    $("section").empty();
-   
+
     get(config).then(function(response) {
   console.log("Success!");
     let obj = $.parseJSON(response);
@@ -54,6 +54,8 @@ for (let index = 0; index < obj.items.length; ++index) {
 })
  
 }
+
+
 
 
 function get(config) {
