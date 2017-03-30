@@ -22,6 +22,7 @@
       margin: 10px;
       animation: fadeIn 2s; 
       animation-fill-mode: both;/*this allow the animation to stay when it finish*/
+      /*transition: 2s;*/
     }
       /*this is a CSS animation, i took it from here 
       https://www.tutorialspoint.com/css/css_animation_fade_in.htm*/
