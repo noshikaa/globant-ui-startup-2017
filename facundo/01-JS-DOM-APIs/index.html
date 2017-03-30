@@ -18,28 +18,49 @@
     <section class="hidden" id="1">
         Hello World
     </section>
-    <button type="button" onclick="loadXML()">Press me for a Joke</button>
+    <button type="button" onclick="load()">Press me for a Joke</button>
     <footer>
         Soy un footer
     </footer>
 
 </body>
 <script>
-    function fadein() {
-        document.getElementById('1').className = 'sect';
-    }
-
-    function loadXML() {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                content = JSON.parse(this.responseText)
-                document.getElementById("1").innerHTML= content.value.joke
-            }
-        };
-        xhttp.open("GET", "http://api.icndb.com/jokes/random", true);
-        xhttp.send();
-    }
+        function fadein() {
+            document.getElementById('1').className = 'sect';
+        }
+        function makeRequest(method, url) {
+            return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open(method, url);
+                xhr.onload = function () {
+                    if (this.status >= 200 && this.status < 300) {
+                        resolve(xhr.response);
+                    } else {
+                        reject({
+                            status: this.status,
+                            statusText: xhr.statusText
+                        });
+                    }
+                };
+                xhr.onerror = function () {
+                    reject({
+                        status: this.status,
+                        statusText: xhr.statusText
+                    });
+                };
+                xhr.send();
+            });
+        }
+        function load() {
+            makeRequest('GET', 'http://api.icndb.com/jokes/random')
+                .then(function (value) {
+                    content = JSON.parse(value)
+                    document.getElementById("1").innerHTML = content.value.joke
+                })
+                .catch(function (err) {
+                    console.error('Error!', err.statusText);
+                });
+        }
 
 </script>
 
