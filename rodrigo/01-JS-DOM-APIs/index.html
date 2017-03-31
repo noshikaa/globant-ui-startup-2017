@@ -15,15 +15,18 @@
     <h1>Batman</h1>
     <p>Batman's secret identity is Bruce Wayne, an American billionaire, playboy, philanthropist, and owner of Wayne Enterprises. After witnessing the murder of his parents Thomas Wayne and Martha Wayne as a child, he swore vengeance against criminals, an
       oath tempered by a sense of justice.</p>
+    <button type="button" name="button" onclick="promiseMe()" id="change">Change section</button>
   </section>
-  <button type="button" name="button" onclick="promiseMe()">Change section</button>
 
-  <input type="text" name="txtSearch" value="" id="txtSearch">
-  <button type="button" onclick="responseGit()">Search</button>
+  <div class="search">
+    <input type="text" name="txtSearch" value="" id="txtSearch">
+    <button type="button" onclick="responseGit()">Search</button>
+    <ul id="list">
+      <!-- insert li elements from function  -->
+    </ul>
+  </div>
 
-  <ul id="list">
-    <!-- insert li elements from function  -->
-  </ul>
+
 </body>
 
 </html>
