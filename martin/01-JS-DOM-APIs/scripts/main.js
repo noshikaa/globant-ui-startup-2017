@@ -111,8 +111,13 @@
           }
       }
     }
-    //this is my function build it to "fadein", but i dont know how to manipulate velocity 
-    //and timers for the face transition, so i will use CSS3 animations.
+
+    function (){
+      
+    }
+    //this is my function build it to "fadein", but i dont know how to manipulate velocity, speeds 
+    //and/or timers for the fade transition, so i will use CSS3 animations.
+
     //fetch for delay and transition CCs3
     /*function fadeIn(){
       let la = 0;
