@@ -1,55 +1,65 @@
-    body{
-      background: #333333;
-      color: white;
+    body {
+        background: #333333;
+        color: white;
     }
-    div{
-      background-color: #696969;
-      width: auto;
-      height: auto;
-      border-radius: 10px;
-      padding: 10px; 
-      margin-left: 10px;
-      margin-right: 10px; 
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    section{
-      opacity: 0;
-      text-align: center;
-      background-color: #129402;
-      border-radius: 10px; 
-      padding: 10px;
-      margin: 10px;
-      animation: fadeIn 2s; 
-      animation-fill-mode: both;/*this allow the animation to stay when it finish*/
-      /*transition: 2s;*/
-    }
-      /*this is a CSS animation, i took it from here 
-      https://www.tutorialspoint.com/css/css_animation_fade_in.htm*/
-    @keyframes fadeIn {
-      0% {opacity: 0;}
-      100% {opacity: 1;}
-    } 
     
-    button{
-      text-align: center;
-      border-radius: 5px;
+    div {
+        background-color: #696969;
+        width: auto;
+        height: auto;
+        border-radius: 10px;
+        padding: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
-    .filter{
-      position: relative;
-      float: right;
-      background-color: #696969;
-      width: auto;
-      height: auto;
-      border-radius: 10px;
-      margin-top: 50px;
-      margin-right: 10px;
+    
+    section {
+        opacity: 0;
+        text-align: center;
+        background-color: #129402;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        animation: fadeIn 2s;
+        animation-fill-mode: both;
+        /*this allow the animation to stay when it finish*/
+        /*transition: 2s;*/
     }
-    input{
-      position: relative;
-      float: right;
-      background-color: #696969;
-      border-radius: 3px;
+    /*this is a CSS animation, i took it from here 
+      https://www.tutorialspoint.com/css/css_animation_fade_in.htm*/
+    
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    button {
+        text-align: center;
+        border-radius: 5px;
+    }
+    
+    .filter {
+        position: relative;
+        float: right;
+        background-color: #696969;
+        width: auto;
+        height: auto;
+        border-radius: 10px;
+        margin-top: 50px;
+        margin-right: 10px;
+    }
+    
+    input {
+        position: relative;
+        float: right;
+        background-color: #696969;
+        border-radius: 3px;
     }
     /*ul{
       position: relative;
@@ -60,8 +70,6 @@
       border-radius: 10px;
 
     }*/
-
-
     /*
     }
     @keyframes mymove {
@@ -70,7 +78,7 @@
       75%  {opacity: 0.75;}
       100% {opacity: 1;}
     }*/
-   /* header{
+    /* header{
       text-align: center;
       height: 50px;
       background-color: #808080;
