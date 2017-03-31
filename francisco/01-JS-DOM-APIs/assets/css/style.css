@@ -22,3 +22,7 @@
 #btn {
   margin:auto;
 }
+
+#repoList {
+  float : right;
+}
