@@ -39,6 +39,10 @@ label {
     color: #ffffff;
 }
 
+input {
+    width: 400px;
+}
+
 select {
     margin-bottom: 25px;
 }
@@ -56,7 +60,7 @@ select {
     font: 16px arial, sans-serif;
 }
 
-.white {
+.white-w-shadow {
     background-color: #ffffff;
     width: 500px;
     -moz-box-shadow:9px 9px 3px rgba(83, 93, 128, 0.83);
@@ -72,14 +76,12 @@ select {
     opacity: 0;
 }
 
-#hello {
+#hello-world {
     text-align: center;
     -webkit-transition: opacity 1s linear;
     -o-transition:opacity 1s linear;
     -moz-transition:opacity 1s linear;
 }
-
-
 
 #json {
     position: absolute;
@@ -93,17 +95,13 @@ select {
     color: #ffffff;
 }
 
-input {
-    width: 400px;
-}
-
 .datafield {
     width: 100%;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.wrap {
+.wrap-button {
     position: absolute;
     top: 65%;
     left: 0px;
@@ -115,11 +113,11 @@ input {
     display: inline-flex;
 }
 
-.black {
+.black-text {
     color: black;
 }
 
-.red {
+.red-text {
     color: red;
 }
 

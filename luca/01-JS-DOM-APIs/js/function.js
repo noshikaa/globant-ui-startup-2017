@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
-        document.getElementById("hello").className = "";
+        document.getElementById("hello-world").className = "";
     }, 1000);
     document.getElementById("promises").addEventListener('click', some);
     document.getElementById("table").addEventListener('click', matrixGenerate);
@@ -12,7 +12,7 @@ function loadJoke(config) {
     /*Return a new promise*/
     return new Promise(function(resolve, reject) {
         var xhttp = new XMLHttpRequest();
-        if (config.method == "POST") {
+        if (config.method === "POST") {
             xhttp.open(config.method, config.url, config.async);
             xhttp.setRequestHeader(config.header, config.val);
         } else {        
@@ -20,7 +20,7 @@ function loadJoke(config) {
         }
         
         xhttp.onload = function() {
-            if (xhttp.status == 200) {
+            if (xhttp.status === 200) {
                 resolve(xhttp.response);
             } else {
                 reject(Error(xhttp.statusText));   
@@ -33,7 +33,7 @@ function loadJoke(config) {
         };
 
         /* Make the request */
-        if (config.method=="POST") {
+        if (config.method==="POST") {
             xhttp.send(config.parameters);
         } else {
             xhttp.send();
@@ -58,10 +58,9 @@ function some() {
         header:'',
         val:'',
         parameters: ''
-
     };
     /* Add all the parameters from the multiple boxes added. */
-    if (config.method == "GET") {
+    if (config.method === "GET") {
         concat = "?";        
         result = "?";
     } else {
@@ -74,7 +73,7 @@ function some() {
             config.parameters = result.slice(0,-1);
         }
     }
-    if (config.method == "POST") {
+    if (config.method === "POST") {
         config.header = document.getElementById("header").value;
         config.val = document.getElementById("value").value;
         console.log(config);
@@ -87,9 +86,9 @@ function some() {
     then(function(response) {
         var obj = JSON.parse(response);
         /* Reset color */
-        if (hasClass("content", "red")) {
-            removeClass("content", "red");
-            addClass("content", "black");
+        if (hasClass("content", "red-text")) {
+            removeClass("content", "red-text");
+            addClass("content", "black-text");
         }
         if (config.url == 'http://api.icndb.com/jokes/random') {
             title.innerHTML = "What a Joke!";
@@ -98,7 +97,7 @@ function some() {
             for (var i = 0; i < obj.items.length; i++) {
                 document.getElementById("list").innerHTML += "<li>" + obj.items[i].full_name + "</li>";
             }
-            title.innerHTML = "Look at Right!";
+            title.innerHTML = "Look Right!";
             text.innerHTML = "------>";
         } else {
             title.innerHTML = "This is what i've got";
@@ -108,12 +107,14 @@ function some() {
     function(error) {
         text.innerHTML = error;
         title.innerHTML = "Something went WRONG!";
-        if (hasClass("content", "black")) {
-            removeClass("content", "black");
+        if (hasClass("content", "black-text")) {
+            removeClass("content", "black-text");
         }
-        addClass("content","red");
+        addClass("content","red-text");
     })
 }
+
+/* Matrix generation */
 
 function rand(max) {
     return Math.floor((Math.random() * max) + 1)
@@ -131,10 +132,10 @@ function matrixGenerate() {
         }
         matrix.push(temp);
     }
-    totable(matrix);
+    toTable(matrix);
 }
 
-function totable(matrix) {
+function toTable(matrix) {
     var newTable = document.getElementById("newTable");
     var table = document.createElement('table');
     var tableBody = document.createElement('tbody');
