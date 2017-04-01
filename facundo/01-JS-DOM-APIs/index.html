@@ -5,92 +5,26 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="https://necolas.github.io/normalize.css/5.0.0/normalize.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <title></title>
+    <title>JavaScript</title>
+    <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body onload="fadein()">
     <header>
-        <h1>Soy un header</h1>
+        <h1>I'm a header</h1>
     </header>
-    <div id="lista"><div id="titu"3>Lista de repositorios</div></div>
+    <div id="lista"><div id="titu">Repositories List</div></div>
     <section class="hidden" id="1">
         Hello World
     </section>
     
-    <button type="button" onclick="loadJoke()">Press me for a Joke</button>
-    <button type="button" onclick="loadRepository('q=javascript')">Press me for a list of repositories</button>
+    <button type="button" id="joke">Press me for a Joke</button>
+    <input type="text" id="q" placeholder="Type a text to search" ></input>
+    <input type="submit" class="but" id="search" value="Search"></input>
     <footer>
-        Soy un footer
+       I'm a footer
     </footer>
-
 </body>
-<script>
-                                   function fadein() {
-                                       document.getElementById('1').className = 'sect';
-                                   }
-                                   function makeRequest(req) {
-                                       return new Promise(function (resolve, reject) {
-                                           var xhr = new XMLHttpRequest();
-                                           xhr.open(req.method, req.url);
-                                           xhr.onload = function () {
-                                               if (this.status >= 200 && this.status < 300) {
-                                                   resolve(xhr.response);
-                                               } else {
-                                                   reject({
-                                                       status: this.status,
-                                                       statusText: xhr.statusText
-                                                   });
-                                               }
-                                           };
-                                           xhr.onerror = function () {
-                                               reject({
-                                                   status: this.status,
-                                                   statusText: xhr.statusText
-                                               });
-                                           };
-                                           xhr.send();
-                                       });
-                                   }
-                                   function loadJoke() {
-                                       var obj = { method: "GET", url: "http://api.icndb.com/jokes/random", str: null };
-                                       makeRequest(obj)
-                                           .then(function (value) {
-                                               content = JSON.parse(value)
-                                               document.getElementById("1").innerHTML = content.value.joke
-                                           })
-                                           .catch(function (err) {
-                                               console.error('Error!', err.statusText);
-                                           });
-                                   }
-                                   function loadRepository(str) {
 
-                                       var obj = { method: "GET", url: "https://api.github.com/search/repositories?" + str };
-                                       makeRequest(obj)
-                                           .then(function (value) {
-                                               content = JSON.parse(value)
-                                               var arr=[];
-                                               for (var i = 0; i < content.items.length; i++) {
-                                                   arr.push(content.items[i].full_name)                                              
-                                               }
-                                               document.getElementById('lista').innerHTML='<div id="titu"3>Lista de repositorios</div>';
-                                                document.getElementById('lista').appendChild(makeUL(arr));
-                                           })
-                                           .catch(function (err) {
-                                               console.error('Error!', err.statusText);
-                                           });
-                                   }
-
-                                   function makeUL(array) {
-                                       var list = document.createElement('ul');
-                                       for (var i = 0; i < array.length; i++) {
-                                           var item = document.createElement('li');
-                                           item.appendChild(document.createTextNode(array[i]));
-                                           list.appendChild(item);
-                                       }
-                                       return list;
-                                   }
-                                   
-
-</script>
 
 </html>

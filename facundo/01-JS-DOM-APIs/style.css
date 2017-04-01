@@ -1,20 +1,26 @@
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 @keyframes fadein {
     0% { opacity: 0; }
 100% { opacity: 1; }
 }
 .sect{
+    box-sizing: border-box;
     text-align:center;
     animation: fadein 5s;
     font-family:sans-serif;
     font-size: 30px;
     font: bold;
-    width: 61%;
+    width: 66%;
     float: right;
     background-color: darkviolet;
     color:wheat;
-    padding: 15px;
-    margin: 15px;
-    border: 4px;
+    padding: 1%;
+    margin: 1%;
+
     padding-block-start: 0px;
 }
 #titu{
@@ -26,31 +32,30 @@
 header{
 font-size: 20px;
 margin:auto;
-padding: 15px;
-    margin: 15px;
-    border: 4px;
+padding: 1%;
+    margin: 1%;
     background-color: limegreen;
     text-align: center;
+    width: 100%
 }
 .hidden{
     opacity: 0;
-    width: 60%;
+    width: 66%;
     float: left;
     background-color: red;
 }
 #lista{
     float:right;
-    padding: 15px;
-    margin: 15px;
-    border: 4px;
+    padding: 1%;
+    margin: 1%;
     width: 30%;
     background-color: orange;
+    box-sizing: border-box;
     
 }
 footer{
-    padding: 15px;
-    margin: 15px;
-    border: 4px;
+    padding: 1%;
+    margin: 1%;
     clear: both;
     background-color: lightcoral;
 }
@@ -58,12 +63,34 @@ button{
     background-color: #4CAF50;
     border: none;
     color: white;
-    padding: 15px;
-    margin: 15px;
-    border: 4px;
+    padding: 1%;
+    margin: 1%;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     clear: both;
     position: relative;
+    display: block;
+}
+.but{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 1%;
+    margin: 1%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    width:15%;
+    display: inline-block;
+}
+#q{
+    width:15%;
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    padding: 1%;
+    margin: 1%;
+    clear: both;
 }
