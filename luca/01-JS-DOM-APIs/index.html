@@ -22,12 +22,29 @@
                 </div> 
             </div>
         </section>
+        <div id="input-data">
+            <select id="method">
+                <option value="GET">GET</option>
+                <option value="POST">POST</option>
+            </select>
+            <div class="button" id="plus">More data fields</div>
+            <div id="d-fields-section">
+                <input class="datafield" id="d-field0" type="text" title="Add Data, no more than 50 char" pattern="{,50}">
+            </div>
+            <div id="request-header" class="hide">
+                <label for="header">*Input Header:</label>
+                <input class="datafield" type="text" title="Add the header" pattern="{,2000}" name="header" id="header">
+                <label for="value">*Input value:</label>
+                <input class="datafield" type="text" title="Add the value for that header." pattern="{,2000}" name="value" id="value">
+            </div>
+        </div>
+        <div id="json">
+            <label for="url">*Add the URL:</label>
+            <input type="text" title="Add the URL + the data, no more than 2000 characters" pattern="{,2000}" name="url" id="url">
+        </div>
+
         <ul id="list">
         </ul>
-        <div id="json">
-            <label for="url">*Add the URL with the data:</label>
-            <input type="text" title="Add the URL + the data, no more than 2000 characters" pattern="{,2000}" name="url" id="url" required>
-        </div>
         <div class="wrap">
             <div id="promises" class="button" title="Search for some json, Yahr! Or jokes :)">Click me!</div>
             <div id="table" class="button" title="Random table of random elems, max 7x7">Show Table</div>

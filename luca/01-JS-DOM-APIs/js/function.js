@@ -4,13 +4,20 @@ window.addEventListener('DOMContentLoaded', function() {
     }, 1000);
     document.getElementById("promises").addEventListener('click', some);
     document.getElementById("table").addEventListener('click', matrixGenerate);
+    document.getElementById("plus").addEventListener('click', moreFields);
+    document.getElementById("method").addEventListener('click', showRequestHeader)
 });
 
 function loadJoke(config) {
     /*Return a new promise*/
     return new Promise(function(resolve, reject) {
         var xhttp = new XMLHttpRequest();
-        xhttp.open(config.method, config.url, config.async);
+        if (config.method == "POST") {
+            xhttp.open(config.method, config.url, config.async);
+            xhttp.setRequestHeader(config.header, config.val);
+        } else {        
+            xhttp.open(config.method, config.url + config.parameters, config.async);
+        }
         
         xhttp.onload = function() {
             if (xhttp.status == 200) {
@@ -26,23 +33,56 @@ function loadJoke(config) {
         };
 
         /* Make the request */
-        xhttp.send();
+        if (config.method=="POST") {
+            xhttp.send(config.parameters);
+        } else {
+            xhttp.send();
+        }
     });
 }
 
 function some() {
     var dir = document.getElementById("url").value;
-    var config = {
-        method: 'GET',
-        url: dir,
-        async: true,
-        param: null
-    };
+    var meth = document.getElementById("method").value;
     var id_text = "joke";
     var id_title = "j-title";
     var text = document.getElementById(id_text);
     var title = document.getElementById(id_title);
+    var concat="";
+    var result="";
+    var temp="";
+    var config = {
+        method: meth,
+        url: dir,
+        async: true,
+        header:'',
+        val:'',
+        parameters: ''
 
+    };
+    /* Add all the parameters from the multiple boxes added. */
+    if (config.method == "GET") {
+        concat = "?";        
+        result = "?";
+    } else {
+        concat = "&";
+    }
+    var amount = document.getElementById("d-fields-section").childElementCount;
+    for (i=0; i<amount; i++) {
+        if (document.getElementById("d-field"+i).value != "") {
+            result += document.getElementById("d-field"+i).value+concat;
+            config.parameters = result.slice(0,-1);
+        }
+    }
+    if (config.method == "POST") {
+        config.header = document.getElementById("header").value;
+        config.val = document.getElementById("value").value;
+        console.log(config);
+
+    }
+
+    /*  Run or fulfill the promise. (No catch function, i use the 
+        second value of then for that) */
     loadJoke(config).
     then(function(response) {
         var obj = JSON.parse(response);
@@ -54,7 +94,7 @@ function some() {
         if (config.url == 'http://api.icndb.com/jokes/random') {
             title.innerHTML = "What a Joke!";
             text.innerHTML = obj.value.joke;
-        } else if (config.url == "https://api.github.com/search/repositories?q='JavaScript'"){
+        } else if (config.url+config.parameters == "https://api.github.com/search/repositories?q='JavaScript'"){
             for (var i = 0; i < obj.items.length; i++) {
                 document.getElementById("list").innerHTML += "<li>" + obj.items[i].full_name + "</li>";
             }
@@ -135,3 +175,30 @@ function hasClass(idobj, classname) {
     var obj = document.getElementById(idobj);
     return obj.classList.contains(classname);    
 }
+
+
+/* Implementing fields creation */
+
+function moreFields() {
+    var section = document.getElementById("d-fields-section");
+    var obj = document.getElementById("d-field0");
+    var amount = section.childElementCount;
+    if (amount < 5) {
+        var clone = obj.cloneNode(true);
+        clone.id = "d-field" + amount;
+        section.appendChild(clone);
+    } else {
+        alert("TOO MANY FIELDS BRAH!");
+    }
+}
+
+/* Show the fields of request header */
+
+function showRequestHeader() {
+    if (document.getElementById("method").value == "POST") {
+        removeClass("request-header", "hide");
+    } else {
+        addClass("request-header", "hide");
+    }
+}
+

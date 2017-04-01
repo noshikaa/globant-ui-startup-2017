@@ -35,6 +35,13 @@ table {
     text-align: center;
 }
 
+label {
+    color: #ffffff;
+}
+
+select {
+    margin-bottom: 25px;
+}
 
 .center {
     position: absolute;
@@ -90,6 +97,12 @@ input {
     width: 400px;
 }
 
+.datafield {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .wrap {
     position: absolute;
     top: 65%;
@@ -129,3 +142,16 @@ input {
     color: #ffffff;
 }
 
+#d-fields-section {
+    display: grid;
+}
+
+#request-header {
+    display: grid;
+}
+
+#input-data {
+    margin-left: 30px;
+    text-align: center;
+    width: 200px;
+}
