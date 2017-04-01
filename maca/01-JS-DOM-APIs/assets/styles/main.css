@@ -20,7 +20,7 @@ header{
   background: #99ccff;
 }
 
-.joke{
+.jokeWrap{
   border-color: #33bbff;
   border-style: dashed;
 }
@@ -32,6 +32,14 @@ header{
   margin-right: auto; 
  }
 
+.jokeOK{
+  background: #66ffcc !important;
+}
+
+.jokeError{
+  background: red !important;
+}
+
 #btn2{
     margin-top: 5%;
     margin-left: 2%;
@@ -41,11 +49,13 @@ header{
   margin-left: 2%
 }
 
-#list{
-  margin-top: 5%;
+.list{
+  margin-top: 0%;
   width: auto;
   float: right;
   margin-right: 5%;
+  border-color: #33bbff;
+  border-style: dashed; 
 }
 
 footer{
@@ -58,5 +68,3 @@ footer{
   margin-left: auto;
   margin-right: auto;
 }
-
-
