@@ -2,6 +2,8 @@ window.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         document.getElementById("hello").className = "";
     }, 1000);
+    document.getElementById("promises").addEventListener('click', some);
+    document.getElementById("table").addEventListener('click', matrixGenerate);
 });
 
 function loadJoke(config) {
@@ -36,63 +38,100 @@ function some() {
         async: true,
         param: null
     };
-    loadJoke(config).then(function(response) {
-        var obj = JSON.parse(response);
-        /* Restart the color back to black */
-        document.getElementById("joke").style.color = "#000000";
-        document.getElementById("j-title").style.color = "#000000";
+    var id_text = "joke";
+    var id_title = "j-title";
+    var text = document.getElementById(id_text);
+    var title = document.getElementById(id_title);
 
+    loadJoke(config).
+    then(function(response) {
+        var obj = JSON.parse(response);
+        /* Reset color */
+        if (hasClass("content", "red")) {
+            removeClass("content", "red");
+            addClass("content", "black");
+        }
         if (config.url == 'http://api.icndb.com/jokes/random') {
-            document.getElementById("joke").innerHTML = obj.value.joke;
-            document.getElementById("j-title").innerHTML= "What a Joke!";
+            title.innerHTML = "What a Joke!";
+            text.innerHTML = obj.value.joke;
         } else if (config.url == "https://api.github.com/search/repositories?q='JavaScript'"){
             for (var i = 0; i < obj.items.length; i++) {
                 document.getElementById("list").innerHTML += "<li>" + obj.items[i].full_name + "</li>";
             }
-            document.getElementById("j-title").innerHTML= "Look at Right!";
-            document.getElementById("joke").innerHTML = "------>";
+            title.innerHTML = "Look at Right!";
+            text.innerHTML = "------>";
         } else {
-            document.getElementById("j-title").innerHTML= "This is what i've got";
-            document.getElementById("joke").innerHTML = obj;            
+            title.innerHTML = "This is what i've got";
+            text.innerHTML = obj;            
         }
-    }, function(error) {
-        document.getElementById("joke").innerHTML = error;
-        document.getElementById("joke").style.color = "#FF0000";
-        document.getElementById("j-title").innerHTML = "Something went WRONG!";
-        document.getElementById("j-title").style.color = "#FF0000";
+    },
+    function(error) {
+        text.innerHTML = error;
+        title.innerHTML = "Something went WRONG!";
+        if (hasClass("content", "black")) {
+            removeClass("content", "black");
+        }
+        addClass("content","red");
     })
 }
 
-function totable(matrix) {
-  var table = document.createElement('table');
-  var tableBody = document.createElement('tbody');
+function rand(max) {
+    return Math.floor((Math.random() * max) + 1)
+}
 
-  matrix.forEach(function(rowData) {
+function matrixGenerate() {
+    var cols = rand(7);
+    var rows = rand(7);
+    var matrix = [];
+    var temp;
+    for (var i=0; i<rows; i++) {
+    temp = [];
+        for (var j=0; j<cols; j++) {
+            temp.push(rand(100));
+        }
+        matrix.push(temp);
+    }
+    totable(matrix);
+}
+
+function totable(matrix) {
+    var newTable = document.getElementById("newTable");
+    var table = document.createElement('table');
+    var tableBody = document.createElement('tbody');
+
+    matrix.forEach(function(rowData) {
     var row = document.createElement('tr');
 
     rowData.forEach(function(cellData) {
-      var cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(cellData));
-      row.appendChild(cell);
+        var cell = document.createElement('td');
+        cell.appendChild(document.createTextNode(cellData));
+        row.appendChild(cell);
     });
 
     tableBody.appendChild(row);
-  });
+    });
 
-  table.appendChild(tableBody);
-  document.getElementById("newTable").appendChild(table);
+    table.appendChild(tableBody);
+    if (newTable.innerHTML != "") {
+        newTable.innerHTML = "";
+    }
+    newTable.appendChild(table);
+    removeClass("newTable", "hide");
 }
 
-var matrix = [
-    ['hola','como','te','va'],
-    [1, 2, 3, 4],
-    ['cada', 'array', 'es', 'una'],
-    ['nueva', 'columna',',re','loco']
-];  
 
-totable(matrix);
+/* Class Functions */
 
-function showme() {
-    document.getElementById("newTable").className = "";
+function addClass(idobj, classname) {
+    document.getElementById(idobj).className = classname;
 }
 
+function removeClass(idobj, classname) {
+    var obj = document.getElementById(idobj);
+    obj.classList.remove(classname);
+}
+
+function hasClass(idobj, classname) {
+    var obj = document.getElementById(idobj);
+    return obj.classList.contains(classname);    
+}

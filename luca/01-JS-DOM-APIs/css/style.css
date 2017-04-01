@@ -102,6 +102,14 @@ input {
     display: inline-flex;
 }
 
+.black {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+
 .button {
     color: #ffffff;
     border: 2px solid;
