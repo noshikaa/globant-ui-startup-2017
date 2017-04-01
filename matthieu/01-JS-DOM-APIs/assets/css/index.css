@@ -27,7 +27,16 @@ body {
     transition: opacity 2s ease-in;
 }
 
-section {
+.visible{
+      opacity: 1;
+    -webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
+}
+
+.hiddensection {
    
     text-align: center;
 	position:relative;
@@ -38,6 +47,24 @@ section {
 	border-style: solid;
 	font-size:14px;
      opacity:0;
+     -webkit-transition: opacity 2s ease-in;
+    -moz-transition: opacity 2s ease-in;
+    -o-transition: opacity 2s ease-in;
+    -ms-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
+}
+
+.visiblesection {
+   
+    text-align: center;
+	position:relative;
+	height:100%;
+	width:60%;
+	left:20%;
+  border-color:orange;
+	border-style: solid;
+	font-size:14px;
+     opacity:1;
      -webkit-transition: opacity 2s ease-in;
     -moz-transition: opacity 2s ease-in;
     -o-transition: opacity 2s ease-in;
@@ -123,6 +150,13 @@ p{
     margin: 0;
 }
 
+.black{
+    color:black;
+}
+
+.red{
+    color:red;
+}
 
 
 

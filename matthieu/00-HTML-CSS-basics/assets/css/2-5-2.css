@@ -28,6 +28,14 @@ header{
 	height:30px;
 }
 
+.title{
+	 color: white;
+}
+
+p{
+	margin: 0px;
+}
+
 
 
 .showcase{
@@ -59,7 +67,7 @@ header{
 	text-align: center;
 	color:red;
     opacity: 0;
-	height:250px;
+	height:100%;
 	width:400px;
 }
 
@@ -73,7 +81,7 @@ header{
 }
 
 
-.img{
+.img div{
    display:inline-block;
    position: relative;
    padding-left:25px;
@@ -93,6 +101,7 @@ header{
 	top:170px;
 	left:0px;
 	display:inline-block;
+	
 }
 
 

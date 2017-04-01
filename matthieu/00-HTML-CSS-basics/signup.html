@@ -8,53 +8,61 @@
   <meta name="description" content="Signup form">
   <meta name="author" content="Matthieu">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="assets/css/signup.css" rel="stylesheet">
 </head>
 
 
 <body>
 
-<form>
+<div class="wrapper">
 
-  
-    <label><b>First name</b>
-		<input type="text" placeholder="Enter first name" pattern="A-Za-z" maxlength="15" name="first name" required><br><br>
-	</label>
-	
-	<label><b>Last name</b>
-		<input type="text" placeholder="Enter last name" pattern="A-Za-z" maxlength="15" name="last name" required><br><br>
-	</label>
-	
-    <label><b>Email</b>
-		<input type="email" placeholder="Enter your email" pattern="A-Za-z" maxlength="15" name="email" required><br><br>
-	</label>
-	
-	<label><b>Birthday</b>
-		<input type="date" name="birthday"><br><br>
-	</label>
-	
-	<label>
-		<b>What is your favorite sport?</b>
-	</label>
-	
-	<select>
-		<option value="Running">Running</option>
-		<option value="Swimming">Swimming</option>
-		<option value="Play Football">Play Football</option>
-		<option value="Other">Other</option>
-	</select><br><br>
-	
-	<label>
-		<b>Tell us about yourself (optional)</b><br>
-	</label>
-	
-	<textarea rows="4" cols="50"></textarea><br><br>
+	<form class="formulary">
 
-    <div class="clearfix">
-	  <button type="reset" value="Reset">Reset</button>
-      <button type="submit">Sign Up</button>
-    </div>
+	
+		<label>
+			<b>First name</b>
+			<input  type="text" placeholder="Enter first name" pattern="[A-Za-z]{1,15}"  name="first name" required>
+		</label>
+		
+		<label>
+			<b>Last name</b>
+			<input type="text" placeholder="Enter last name" pattern="[A-Za-z]{1,15}"  name="last name" required>
+		</label>
+		
+		<label>
+			<b>Email</b>
+			<input type="email" placeholder="Enter your email" pattern="[A-Za-z]{1,15}" maxlength="15" name="email" required>
+		</label>
+		
+		<label>
+			<b>Birthday</b>
+			<input type="date" name="birthday">
+		</label>
+		
+		<label>
+			<b>What is your favorite sport?</b>
+		</label>
+		
+		<select>
+			<option value="Running">Running</option>
+			<option value="Swimming">Swimming</option>
+			<option value="Play Football">Play Football</option>
+			<option value="Other">Other</option>
+		</select>
+		
+		<label>
+			<b>Tell us about yourself (optional)</b>
+		</label>
+		
+		<textarea rows="4" cols="50"></textarea><br><br>
 
-</form>
+		<div class="clearfix">
+		<button type="reset" value="Reset">Reset</button>
+		<button type="submit">Sign Up</button>
+		</div>
 
+	</form>
+</div>
 </body>
 </html>

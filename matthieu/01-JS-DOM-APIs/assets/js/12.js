@@ -1,31 +1,17 @@
 
 
-/*
+document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
 
- nouveauDiv = document.createElement("div");
-  nouveauDiv.innerHTML = "<h1>Salutations !</h1>";
+  
 
-  // ajoute l'élément qui vient d'être créé et son contenu au DOM
-  mon_div = document.getElementById("org_div1");
-  document.body.insertBefore(nouveauDiv, mon_div);
+  //we create the event for the matrix button button click
+  document.getElementById("matrixbutton").addEventListener("click", matrixbuttonclick);
+  
 
-  */
+  });
 
-  /*
-
-  function Create2DArray(rows) {
-  var arr = [];
-
-  for (var i=0;i<rows;i++) {
-     arr[i] = [];
-  }
-
-  return arr;
-}
-
-*/
-
-function button1click()
+function matrixbuttonclick()
 {
     let matrix = [
   [1, 2],
@@ -64,14 +50,8 @@ function insertmatrix(matrix)
   }
 
   
+document.getElementById("matrix").innerHTML = htmltable;
 
 
-
-
-  newtable.innerHTML = htmltable;
-
-  // ajoute l'élément qui vient d'être créé et son contenu au DOM
-  section = document.getElementById("sec");
-  document.body.insertBefore(newtable, section);
  
 }

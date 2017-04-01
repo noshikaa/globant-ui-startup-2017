@@ -1,55 +1,87 @@
 
 
-$( document ).ready(function() {
-  $("section").css("opacity","1");
-  $(".hidden").css("opacity","1");
-});
-
-https://api.github.com/search/repositories
 
 
-function button1click()
+ document.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
+
+  //middle section is set to visible
+  document.getElementById("middlesection").classList.remove('hiddensection');
+  document.getElementById("middlesection").classList.add('visiblesection');
+
+  //middle text is set to visible
+  document.getElementById("middletext").classList.remove('hidden');
+  document.getElementById("middletext").classList.add('visible');
+
+  //we create the event for the Chuck Norris button click
+  document.getElementById("chucknorrisbutton").addEventListener("click", chucknorrisbuttonclick);
+  //we create the event for the search button
+  document.getElementById("searchbutton").addEventListener("click", searchbuttonclick);
+
+  });
+
+  
+
+
+function chucknorrisbuttonclick()
 {
   let config = {url:"http://api.icndb.com/jokes/random", mimetype:"text/plain; charset=x-user-defined"};
-$("section").empty();
+
+
+ document.getElementById("middlesection").innerHTML = "";
 
     get(config).then(function(response) {
   console.log("Success!", response);
-    let obj = $.parseJSON(response);
-      $("section").append( "<p>"+obj.value.joke+"</p>" );
-      $("section").css("color","black");
+    let obj = JSON.parse(response);
+
+    var node = document.createElement("p");                   // creat <p> node
+    var textnode = document.createTextNode(obj.value.joke);         // Create a text node
+    node.appendChild(textnode);                              // Append the text to <li>
+    node.classList.add('black');
+    document.getElementById("middlesection").appendChild(node);     
       
 }, function(error) {
   console.error("Failed!", error);
-  $("section").append( "<p>Error!</p>" );
-  $("section").css("color","red");
 
+    var node = document.createElement("p");                   // creat <p> node
+    var textnode = document.createTextNode("Error!");         // Create a text node
+    node.appendChild(textnode);                              // Append the text to <li>
+    node.classList.add('red');
+    document.getElementById("middlesection").appendChild(node);     
 })
  
 }
 
 
-function button2click()
+function searchbuttonclick()
 {
-  let config = {url:"https://api.github.com/search/repositories?q=\""+$('#search').val()+"\"", mimetype:"text/plain; charset=x-user-defined"};
-   $("section").empty();
+  let config = {url:"https://api.github.com/search/repositories?q=\""+document.getElementById('search').value+"\"", mimetype:"text/plain; charset=x-user-defined"};
+
+   document.getElementById("middlesection").innerHTML = "";
 
     get(config).then(function(response) {
   console.log("Success!");
-    let obj = $.parseJSON(response);
-     //console.log(obj.items[0].full_name);
-$("#list").empty();
-for (let index = 0; index < obj.items.length; ++index) {
+    let obj = JSON.parse(response);
+     
+    document.getElementById("resultlist").innerHTML = "";
+    for (let index = 0; index < obj.items.length; ++index) {
     let value = obj.items[index].full_name;
     console.log(value);
-    $("#list").append("<li>"+value+"</li>");
+
+    var node = document.createElement("LI");                 // Create a <li> node
+    var textnode = document.createTextNode(value);         // Create a text node
+    node.appendChild(textnode);                              // Append the text to <li>
+    document.getElementById("resultlist").appendChild(node);     // Append <li> to <ul> with id="myList"
 }
       
       
 }, function(error) {
-  console.error("Failed!", error);
-  $("section").append( "<p>No result!</p>" );
-  $("section").css("color","black");
+
+    var node = document.createElement("p");                   // creat <p> node
+    var textnode = document.createTextNode("No result!");         // Create a text node
+    node.appendChild(textnode);                              // Append the text to <li>
+    node.classList.add('red');
+    document.getElementById("middlesection").appendChild(node);     
 
 })
  
@@ -92,3 +124,4 @@ function get(config) {
 
 }
 
+  
