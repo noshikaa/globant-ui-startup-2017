@@ -1,6 +1,6 @@
 
 window.addEventListener("load", function () {
-    document.getElementById('tit').style.visibility = "hidden"
+    document.getElementById('tit').className = "hidden"
     document.getElementById("sub").addEventListener("click", loadtable);
 }, false);
 
@@ -34,5 +34,5 @@ function createTable(array) {
         });
         tbody.appendChild(row);
     });
-    document.getElementById('tit').style.visibility = "visible";
+    document.getElementById('tit').className = "visible";
 }
