@@ -6,28 +6,30 @@ let config = {
 
 
 
-window.onload = function(){			
-			document.getElementById('hidden').style.opacity = 1;
-			document.getElementById("btn").addEventListener("click", getJoke2);
-			document.getElementById("btn2").addEventListener("click", getNames);
-
+window.onload = function(){		
+			document.getElementById("btnGetJoke").addEventListener("click", getJoke2);
+			document.getElementById("btnSearchGitHub").addEventListener("click", getNames);
+		//	document.getElementById("divForJoke").classList.remove('hiddenDivForJoke');
+			document.getElementById("divForJoke").classList.add('visibleDivForJoke');
 }
 
+
+
 //topic 1 - ex. 6
-getJoke = function(){
+let getJoke = function getJoke(){
 		let req = new XMLHttpRequest();
 		req.open('GET', "http://api.icndb.com/jokes/random", true);
 		req.onload = function () {
 	        	if(req.readyState === XMLHttpRequest.DONE && req.status === 200) {
 	        		let jsonResp = JSON.parse(req.responseText);
-	        		document.getElementById('hidden').innerHTML = jsonResp.value.joke;
+	        		document.getElementById('hiddenDivForJoke').innerHTML = jsonResp.value.joke;
 	        }
 	    };
 		req.send();
 };
 
 //topic 1 - ex. 7
-promiseFunct = function(config){
+let promiseFunct = function promiseFunct(config){
 	let prom = new Promise(function(resolve, reject){
 		let req = new XMLHttpRequest();
 		req.open(config.method, config.url);
@@ -51,32 +53,32 @@ promiseFunct = function(config){
 	return prom;
 };
 
-getJoke2 = function(){
+let getJoke2 = function getJoke2(){
 	config.method = "GET";
 	config.url = "http://api.icndb.com/jokes/random";
 	promiseFunct(config)
 		.then(function(response){			
 			let jsonResp = JSON.parse(response);
-			document.getElementById('hidden').innerHTML = jsonResp.value.joke;
-	        document.getElementById('hidden').className = "jokeOK";
+			document.getElementById('divForJoke').innerHTML = jsonResp.value.joke;
+	        document.getElementById('divForJoke').classList.add('jokeOK');
 		})
 		.catch(function(error) {
 			console.error("Failed!", error);
-			document.getElementById('hidden').innerHTML = "ERROR!";
-	        document.getElementById('hidden').className = "jokeError";		
+			document.getElementById('divForJoke').innerHTML = "ERROR!";
+	        document.getElementById('divForJoke').classList.add('jokeError');		
 		})						
 };
 
 //topic 1 - ex. 9
-getNames = function(){	
+let getNames = function getNames(){	
 	config.method = "GET";
-	config.q = document.getElementById('q').value;
+	config.q = document.getElementById('queryBox').value;
 	config.url = "https://api.github.com/search/repositories?q="+config.q;
 	promiseFunct(config)
 	.then(function(response){
-		list = document.createElement("ul");
-		respJson = JSON.parse(response);
-		for (var obj in respJson.items){
+		let list = document.createElement("ul");
+		let respJson = JSON.parse(response);
+		for (let obj in respJson.items){
 			const li = document.createElement("li");
 			let text = document.createTextNode(respJson.items[obj].full_name);
 			li.appendChild(text);

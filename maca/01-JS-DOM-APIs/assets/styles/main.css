@@ -9,7 +9,7 @@ header{
   background: #99ccff;
 }
 
-#hidden{
+.hiddenDivForJoke{
   opacity: 0;
   transition: opacity 3s;
   display: table;
@@ -17,7 +17,18 @@ header{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  background: #99ccff;
+  background:  #33bbff;
+}
+
+.visibleDivForJoke{
+  opacity: 1;
+ /* transition: opacity 3s;
+  display: table;
+  margin-top: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background:  #33bbff;*/
 }
 
 .jokeWrap{
@@ -25,7 +36,7 @@ header{
   border-style: dashed;
 }
 
-#btn{
+#btnGetJoke{
   display: table;
   margin-top: 2%;
   margin-left: auto;
@@ -33,19 +44,20 @@ header{
  }
 
 .jokeOK{
-  background: #66ffcc !important;
+  background: #66ffcc;
+  
 }
 
 .jokeError{
-  background: red !important;
+  background: red;
 }
 
-#btn2{
+#btnSearchGitHub{
     margin-top: 5%;
     margin-left: 2%;
 }
 
-#q{
+#queryBox{
   margin-left: 2%
 }
 
