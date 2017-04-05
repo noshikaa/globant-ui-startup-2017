@@ -1,44 +1,8 @@
 window.addEventListener("load", function () {
-    dothings();
-    tryEventEmitter();
+    //tryMovie();
+    //tryEventEmitter();
+    tryTogether();
 })
-class Movie {
-    constructor(title, year, duration) {
-        this.title = title;
-        this.year = year;
-        this.duration = duration;
-    }
-    play() {
-        console.log("You play the Movie")
-    }
-    pause() {
-        console.log("You Pause the Movie")
-    }
-    resume() {
-        console.log("You resume the Movie")
-    }
-    tostring() {
-        let str = "\nThe movie is: " + this.title + "\nThe year is: " + this.year + "\nThe duration is: " + this.duration + " minutes";
-        return str
-    }
-
-}
-function dothings() {
-    var movie1 = new Movie("Toy Story", 1992, 180);
-    var movie2 = new Movie("The Shining", 1980, 120);
-    var movie3 = new Movie("Harry Potter", 2004, 140);
-    movie1.play();
-    movie2.pause();
-    movie3.resume();
-    console.log(movie1.tostring());
-    console.log(movie2.tostring());
-    console.log(movie3.tostring());
-}
-function error(message, ...args) {
-    console.error.apply(console, [message].concat(args))
-    console.trace()
-}
-
 class EventEmitter {
     constructor() {
         this.events = {}
@@ -95,7 +59,45 @@ class EventEmitter {
         this.on(event, onceCallback)
     }
 }
+class Movie extends EventEmitter {
+    constructor(title, year, duration) {
+        super();
+        this.title = title;
+        this.year = year;
+        this.duration = duration;
+    }
 
+    play() {
+        this.emit("play", "The 'play' event has been emitted")
+    }
+    pause() {
+        this.emit("pause", "The 'Pause' event has been emitted")
+    }
+    resume() {
+        this.emit("resume", "The 'Resume' event has been emitted")
+    }
+    tostring() {
+        let str = "\nThe movie is: " + this.title + "\nThe year is: " + this.year + "\nThe duration is: " + this.duration + " minutes";
+        return str
+    }
+
+}
+class Logger {
+    log(info) {
+        console.log(info);
+    }
+}
+function tryMovie() {
+    var movie1 = new Movie("Toy Story", 1992, 180);
+    var movie2 = new Movie("The Shining", 1980, 120);
+    var movie3 = new Movie("Harry Potter", 2004, 140);
+    movie1.play();
+    movie2.pause();
+    movie3.resume();
+    console.log(movie1.tostring());
+    console.log(movie2.tostring());
+    console.log(movie3.tostring());
+}
 function tryEventEmitter() {
     var emitter = new EventEmitter();
     var list1 = function (name) {
@@ -107,5 +109,11 @@ function tryEventEmitter() {
     emitter.on('TheEvent', list1);
     emitter.on('TheEvent', list2);
     emitter.emit('TheEvent', "Test");
+}
+function tryTogether() {
+    let terminator = new Movie('Terminator', 1984, 90);
+    let logger = new Logger();
+    terminator.on('resume', logger.log);
+    terminator.resume();
 }
 
