@@ -8,7 +8,7 @@ function loadtable() {
     document.getElementById('tab').innerHTML="";
     let fil = document.getElementById("fil").value
     let col = document.getElementById("col").value
-    createArray(fil, col)
+    createTable(fil, col)
 }
 
 function createArray(fil, col) {
@@ -19,11 +19,12 @@ function createArray(fil, col) {
             array[i][j] = (Math.random() * 100 | 0);
         }
     }
-    createTable(array)
+    return array;
 }
-function createTable(array) {
+function createTable(fil,col) {
     var table = document.getElementById("tab");
     var tbody = document.createElement("tbody");
+    var array = createArray(fil, col);
     table.appendChild(tbody);
     array.forEach(function (items) {
         var row = document.createElement("tr");

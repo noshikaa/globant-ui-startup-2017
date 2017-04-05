@@ -1,10 +1,11 @@
 window.addEventListener("load", function() {
+    fadein();
     document.getElementById("joke").addEventListener("click", loadJoke);
     document.getElementById("search").addEventListener("click", loadRepository);
 }, false);
 
 function fadein() {
-    document.getElementById('1').className = 'sect';
+    document.getElementById('HelloWorld').className = 'sect';
 }
 function makeRequest(req) {
     return new Promise(function (resolve, reject) {
@@ -34,14 +35,14 @@ function loadJoke() {
     makeRequest(obj)
         .then(function (value) {
             content = JSON.parse(value)
-            document.getElementById("1").innerHTML = content.value.joke
+            document.getElementById("HelloWorld").innerHTML = content.value.joke
         })
         .catch(function (err) {
             console.error('Error!', err.statusText);
         });
 }
 function loadRepository() {
-    var obj = { method: "GET", url: "https://api.github.com/search/repositories?q=" + document.getElementById("q").value };
+    let obj = { method: "GET", url: "https://api.github.com/search/repositories?q=" + document.getElementById("q").value };
     makeRequest(obj)
         .then(function (value) {
             content = JSON.parse(value)
