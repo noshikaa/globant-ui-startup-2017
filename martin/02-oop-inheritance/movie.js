@@ -1,19 +1,10 @@
 'use strict';
-//custom object for exer 1.
-var Movie = {
-  title: "Star Wars",
-  year: "1977",
-  duration: "121 minutes",
-  play() {},
-  pause() {},
-  resume() {}
-};
 //exer 3.
 class EventEmitter {
   constructor() {
-    this.events = {}; //this is an object.
-    //can use '_events' instead of 'events' to indicate that it should 
-    //be trated as a private property.
+    this.events = {} //this is an object.
+      //can use '_events' instead of 'events' to indicate that it should 
+      //be trated as a private property.
   }
   on(event, callback) {
     //check if the event do not exists as an object.
@@ -24,11 +15,29 @@ class EventEmitter {
     this.events[event].push(callback); //introduce the callback into the array
   }
   emit(event) {
-    if (typeof this.events[event] === 'object') { //check if it is an object.
-      this.events[event].forEach(function(i) {
-        i.apply();
+    //let args = Array.prototype.slice.call(arguments, 1); //transforms the arguments object into an array.
+    /*if (typeof this.events[event] === 'object') {
+      let listeners = this.events[event].slice();
+      let length = listeners.length;
+
+      for (let i = 0; i < length; i++) {
+        listeners[i].apply(this, args);
+      }
+    } else console.error("uknown event(call .on first)");*/
+
+    if (this.events[event]) { //check if it exists.
+      console.log(typeof this.events[event]);
+      this.events[event].forEach(function(element) {
+
+        element.call();
       })
-    } else console.error('uknown event');
+    } else console.error("uknown event(call .on first)");
+
+    /*if (this.events[event]) { //check if it exists.
+      this.events[event].forEach(function(element) {
+        element.call();
+      })
+    } else console.error("uknown event(call .on first)");*/
     //when a method is executed, emmit it. Example: Movie.play(); <= call emit;
   }
   off(event, callback) { //we pass the event and the function/method to remove from the events array.
@@ -52,3 +61,58 @@ class EventEmitter {
     }
   }
 }
+class Movie extends EventEmitter {
+  constructor(title, year, duration) {
+    super()
+    this.title = title
+    this.year = year
+    this.duration = duration
+  }
+  play() {
+    this.emit("play");
+
+  }
+  pause() {
+    this.emit("pause");
+  }
+  resume() {
+    this.emit("resume");
+  }
+}
+class Logger extends EventEmitter {
+  constructor() {}
+  log(info) {
+    EventEmitter.on("play",
+      console.info("The" + info + "event has been emmited"));
+  }
+}
+//custom object for exer 1.
+//Object contructor (basic way). 
+/*var movie = new Object();
+
+movie.title = "Star Wars",
+  movie.year = "1977",
+  movie.duration = "121 minutes",
+  movie.play = function() {},
+  movie.pause = function() {},
+  movie.resume = function() {};*/
+//Object Literal (standar prototype always)
+/*var Movie = {
+  title: "Star Wars",
+  year: "1977",
+  duration: "121 minutes",
+  play() {},
+  pause() {},
+  resume() {}
+};*/
+//Native Object Orietation :constructor and standar prototype (can be changed)).
+/*var Movie = function(title, year, duration) {
+    this.title = title;
+    this.year = year;
+    this.duration = duration;
+    this.play = function() {};
+    this.pause = function() {};
+    this.resume = function() {};
+  }*/
+//declaring 'class' Movie derived from EventEmitter(remains prototype-based,
+//still being an object and 'class' it's just sugar).
