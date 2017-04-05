@@ -15,29 +15,12 @@ class EventEmitter {
     this.events[event].push(callback); //introduce the callback into the array
   }
   emit(event) {
-    //let args = Array.prototype.slice.call(arguments, 1); //transforms the arguments object into an array.
-    /*if (typeof this.events[event] === 'object') {
-      let listeners = this.events[event].slice();
-      let length = listeners.length;
-
-      for (let i = 0; i < length; i++) {
-        listeners[i].apply(this, args);
-      }
-    } else console.error("uknown event(call .on first)");*/
-
     if (this.events[event]) { //check if it exists.
       console.log(typeof this.events[event]);
       this.events[event].forEach(function(element) {
-
         element.call();
       })
     } else console.error("uknown event(call .on first)");
-
-    /*if (this.events[event]) { //check if it exists.
-      this.events[event].forEach(function(element) {
-        element.call();
-      })
-    } else console.error("uknown event(call .on first)");*/
     //when a method is executed, emmit it. Example: Movie.play(); <= call emit;
   }
   off(event, callback) { //we pass the event and the function/method to remove from the events array.
@@ -79,11 +62,10 @@ class Movie extends EventEmitter {
     this.emit("resume");
   }
 }
-class Logger extends EventEmitter {
+class Logger {
   constructor() {}
-  log(info) {
-    EventEmitter.on("play",
-      console.info("The" + info + "event has been emmited"));
+  log() {
+    console.log("The event has been emmited");
   }
 }
 //custom object for exer 1.
