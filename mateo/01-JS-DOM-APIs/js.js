@@ -1,26 +1,17 @@
-var fade_in_from = 0;
 
-//*ex nº 1/2/3/4
+window.onload=function(){
 
-function fadeIn(element){
+    document.getElementById("btn").onclick = btnclck;    
 
-     var target = document.getElementById(element);
-     target.style.display = "block";
-            
-     var newSetting = fade_in_from / 10;
-     target.style.opacity = newSetting;
+    document.getElementById("btn2").onclick = btnjs;
 
-      fade_in_from++;
+    document.getElementById("srcrep").onclick = srchrepo;
 
-     if(fade_in_from==10){
-     target.style.opacity= 1;
-     clearTimeout(loopTimer);
-     fade_in_from=0;
-     return false;
-    }
+    document.getElementById("createMatrix").onclick = tableCreate;
+    
 
-  var loopTimer = setTimeout('fadeIn(\''+element+'\')',50);
 }
+
 
 //*ex nº 6/7/8
 
@@ -83,7 +74,7 @@ function btnjs(){
                 document.getElementById("list").style.opacity = 1;
             
                 
-                 for(i = 0 ; i < j.items.length ; i++){
+                 for(var i = 0 ; i < j.items.length ; i++){
 
                     let text = j.items[i].full_name;
                     var node = document.createElement("li");
@@ -120,7 +111,7 @@ function srchrepo(){
                 
             
                 
-                 for(i = 0 ; i < j.items.length ; i++){
+                 for(var i = 0 ; i < j.items.length ; i++){
 
                     let repo = j.items[i].full_name;
                     if(repo == name){
