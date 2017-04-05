@@ -31,8 +31,7 @@ function makeRequest(req) {
     });
 }
 function loadJoke() {
-    var obj = { method: "GET", url: "http://api.icndb.com/jokes/random", str: null };
-    makeRequest(obj)
+    makeRequest({ method: "GET", url: "http://api.icndb.com/jokes/random", str: null })
         .then(function (value) {
             content = JSON.parse(value)
             document.getElementById("HelloWorld").innerHTML = content.value.joke
@@ -42,8 +41,7 @@ function loadJoke() {
         });
 }
 function loadRepository() {
-    let obj = { method: "GET", url: "https://api.github.com/search/repositories?q=" + document.getElementById("q").value };
-    makeRequest(obj)
+    makeRequest({ method: "GET", url: "https://api.github.com/search/repositories?q=" + document.getElementById("q").value })
         .then(function (value) {
             content = JSON.parse(value)
             var arr = [];
