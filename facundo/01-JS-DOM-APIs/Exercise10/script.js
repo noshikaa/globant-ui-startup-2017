@@ -33,7 +33,7 @@ function makeRequest(req) {
 function loadJoke() {
     makeRequest({ method: "GET", url: "http://api.icndb.com/jokes/random", str: null })
         .then(function (value) {
-            content = JSON.parse(value)
+            let content = JSON.parse(value)
             document.getElementById("HelloWorld").innerHTML = content.value.joke
         })
         .catch(function (err) {
@@ -43,7 +43,7 @@ function loadJoke() {
 function loadRepository() {
     makeRequest({ method: "GET", url: "https://api.github.com/search/repositories?q=" + document.getElementById("q").value })
         .then(function (value) {
-            content = JSON.parse(value)
+            let content = JSON.parse(value)
             var arr = [];
             for (var i = 0; i < content.items.length; i++) {
                 arr.push(content.items[i].full_name)
