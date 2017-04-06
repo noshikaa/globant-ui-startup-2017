@@ -44,16 +44,17 @@ class EventEmitter {
     }
   }
 }
+//exer4
 class Movie extends EventEmitter {
   constructor(title, year, duration) {
     super()
     this.title = title
     this.year = year
     this.duration = duration
+    this.actors = []
   }
   play() {
     this.emit("play");
-
   }
   pause() {
     this.emit("pause");
@@ -61,40 +62,60 @@ class Movie extends EventEmitter {
   resume() {
     this.emit("resume");
   }
+  addCast(actor_name) {
+    if (actor_name instanceof Array) { //is an array
+      for (let i = 0; i < actor_name.length; i++) {
+        this.actors.push(actor_name[i]);
+      }
+    } else if (typeof actor_name === 'object') { //is an object
+      this.actors.push(actor_name);
+    } else console.error("the argument is not and object or an array");
+  }
 }
+//exer5
 class Logger {
   constructor() {}
   log() {
     console.log("The event has been emmited");
   }
 }
-//custom object for exer 1.
-//Object contructor (basic way). 
-/*var movie = new Object();
+//exer6
+//Object Literal
+const Social = {
+  share(friendName) {
+    let output = `${friendName} share ${this.title}`;
+    console.log(output);
+  },
+  like(friendName) {
+    let output = `${friendName} like ${this.title}`;
+    console.log(output);
+  }
+};
+//exer 6 test
+let starWars = new Movie("Star Wars", 1977, 121);
+Object.assign(starWars, Social);
+starWars.like("Martin");
+starWars.share("Ernesto");
 
-movie.title = "Star Wars",
-  movie.year = "1977",
-  movie.duration = "121 minutes",
-  movie.play = function() {},
-  movie.pause = function() {},
-  movie.resume = function() {};*/
-//Object Literal (standar prototype always)
-/*var Movie = {
-  title: "Star Wars",
-  year: "1977",
-  duration: "121 minutes",
-  play() {},
-  pause() {},
-  resume() {}
-};*/
-//Native Object Orietation :constructor and standar prototype (can be changed)).
-/*var Movie = function(title, year, duration) {
-    this.title = title;
-    this.year = year;
-    this.duration = duration;
-    this.play = function() {};
-    this.pause = function() {};
-    this.resume = function() {};
-  }*/
-//declaring 'class' Movie derived from EventEmitter(remains prototype-based,
-//still being an object and 'class' it's just sugar).
+//exer7
+class Actor {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+//exer 7 test
+let arnold = new Actor("Arnold Schwarzenegger", 69);
+let sylvester = new Actor("Sylvester Stallone", 70);
+let jack = new Actor("Jack Nicholson", 79);
+
+//exer 8 test
+let terminator = new Movie('Terminator I', 1985, 60);
+let arnold = new Actor('Arnold Schwarzenegger', 50);
+let otherCast = [
+  new Actor('Paul Winfield', 50),
+  new Actor('Michael Biehn', 50),
+  new Actor('Linda Hamilton', 50)
+];
+terminator.addCast(arnold);
+terminator.addCast(otherCast);
