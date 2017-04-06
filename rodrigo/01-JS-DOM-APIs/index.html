@@ -11,16 +11,18 @@
 </head>
 
 <body>
-  <section id="fade">
-    <h1>Batman</h1>
-    <p>Batman's secret identity is Bruce Wayne, an American billionaire, playboy, philanthropist, and owner of Wayne Enterprises. After witnessing the murder of his parents Thomas Wayne and Martha Wayne as a child, he swore vengeance against criminals, an
-      oath tempered by a sense of justice.</p>
-    <button type="button" name="button" onclick="promiseMe()" id="change">Change section</button>
+  <section class="jokewrapper">
+    <div class="hidden" id="hiddenJoke">
+      <h1>Batman</h1>
+      <p>Batman's secret identity is Bruce Wayne, an American billionaire, playboy, philanthropist, and owner of Wayne Enterprises. After witnessing the murder of his parents Thomas Wayne and Martha Wayne as a child, he swore vengeance against criminals,
+        an oath tempered by a sense of justice.</p>
+    </div>
+    <button type="button" name="button" id="btnChange">Change section</button>
   </section>
 
   <div class="search">
     <input type="text" name="txtSearch" value="" id="txtSearch">
-    <button type="button" onclick="responseGit()">Search</button>
+    <button type="button" id="btnGit">Search</button>
     <ul id="list">
       <!-- insert li elements from function  -->
     </ul>

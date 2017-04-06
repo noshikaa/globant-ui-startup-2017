@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function(event) {
+  document.getElementById("matrixTable").addEventListener("click", table);
+})
+
 function createTable(tableData) {
   var table = document.createElement('table');
   var tableBody = document.createElement('tbody');
