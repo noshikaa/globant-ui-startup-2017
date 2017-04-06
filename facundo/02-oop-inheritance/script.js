@@ -1,8 +1,16 @@
 window.addEventListener("load", function () {
     //tryMovie();
     //tryEventEmitter();
-    tryTogether();
+    //tryTogether();
+    trySocial();
 })
+/**
+ * 
+ * 
+ * @class EventEmitter
+ * A class that implements an Observer Pattern, it Subscribes, emits, and unsubscribes
+ * from events.
+ */
 class EventEmitter {
     constructor() {
         this.events = {}
@@ -59,6 +67,14 @@ class EventEmitter {
         this.on(event, onceCallback)
     }
 }
+/**
+ * 
+ * 
+ * @class Movie
+ * @extends {EventEmitter}
+ * A Class that extends event emitter, it has the Clasic Movie attributes, and emits an event
+ * when play, resume and pause
+ */
 class Movie extends EventEmitter {
     constructor(title, year, duration) {
         super();
@@ -87,6 +103,11 @@ class Logger {
         console.log(info);
     }
 }
+
+/**
+ * The Folowwing functions are Tests for the classes implemented previously.
+ * 
+ */
 function tryMovie() {
     var movie1 = new Movie("Toy Story", 1992, 180);
     var movie2 = new Movie("The Shining", 1980, 120);
@@ -98,6 +119,7 @@ function tryMovie() {
     console.log(movie2.tostring());
     console.log(movie3.tostring());
 }
+
 function tryEventEmitter() {
     var emitter = new EventEmitter();
     var list1 = function (name) {
@@ -110,10 +132,29 @@ function tryEventEmitter() {
     emitter.on('TheEvent', list2);
     emitter.emit('TheEvent', "Test");
 }
+
 function tryTogether() {
     let terminator = new Movie('Terminator', 1984, 90);
     let logger = new Logger();
     terminator.on('resume', logger.log);
     terminator.resume();
 }
+function trySocial() {
+    let Social = {
+        age: 30,
+        share: function (friendName) {
+            let output = `Share ${this.title} with ${friendName}`;
+            console.log(output);
+        },
+        like: function (friendName) {
+            let output = `${friendName} likes ${this.title}`;
+            console.log(output);
+        }
+    };
+    let movie = new Movie("The Shining", 1980, 120);
+    Object.assign(movie, Social);
+    movie.share('Jorge');
+    movie.like('Pedro')
+}
+
 
