@@ -1,4 +1,5 @@
-#mainHeader{
+.header{
+  font-size: 46px;
   background: darkgreen;
   color: white;
 }
@@ -9,23 +10,23 @@
   height:500px;
 }
 
-.nav{
+.navigation{
   position: absolute;
   left: 0%;
   width: 20%;
   background: #ccffee;
   height: 50%;
-
+  font-size: 12px;
 }  
 
-.section{  
+.content{  
   position: absolute;
   height: 100%;
   left: 20%;
   width: 60%;
 }
 
-.header{
+.sectionHeader{
   position: absolute;
   background: #ccffee;
   height: 50px;
@@ -44,7 +45,7 @@
 
 }
 
-.footer{
+.sectionFooter{
   position: absolute;
   background: #ccffee;
   height: 36px;
@@ -55,22 +56,23 @@
  
 }
 
-.aside{
+.sidebar{
   position: absolute;
   left: 80%;
   width: 20%;
   background: #ccffee;
   height: 50%;
- 
-
+  font-size: 10px;
 }
 
 body{
   font-size: 14px;
   font-family: "Trebuchet MS";
+  font-weight: bolder;
 }
 
-#mainFooter{
+.footer{
+  font-size: 10px;
   margin-top: 10px;
   background: darkgreen;
   color: white;
@@ -85,3 +87,20 @@ header, footer {
     text-align: center;
 
 }
+
+.trying:hover{
+  color: blue
+}
+
+[class*="a"]:not([class*="r"]){
+  background: blue;
+}
+
+[class$="r"]{
+  background: magenta;
+}
+
+.oh-no{
+  background: green !important;
+}
+
