@@ -2,7 +2,8 @@ window.addEventListener("load", function () {
     //tryMovie();
     //tryEventEmitter();
     //tryTogether();
-    trySocial();
+    //trySocial();
+    tryActors();
 })
 /**
  * 
@@ -81,6 +82,7 @@ class Movie extends EventEmitter {
         this.title = title;
         this.year = year;
         this.duration = duration;
+        this.cast = [];
     }
 
     play() {
@@ -92,15 +94,47 @@ class Movie extends EventEmitter {
     resume() {
         this.emit("resume", "The 'Resume' event has been emitted")
     }
+    
+    addCast(actors) {
+        if (Array.isArray(actors)) {
+            for (let i = 0; i < actors.length; i++) {
+                if (actors[i] instanceof Actor) {
+                    this.cast.push(actors[i]);
+                }
+            }
+        }
+        else {
+            if (actors instanceof Actor) {
+                this.cast.push(actors);
+            }
+        }
+    }
+    castToString(){
+        let str = "Cast: ";
+        for (let i = 0; i < this.cast.length; i++) {
+            str +=  `\n\tName: ${this.cast[i].name}, Age: ${this.cast[i].age}` }
+            return str
+    }
     tostring() {
-        let str = "\nThe movie is: " + this.title + "\nThe year is: " + this.year + "\nThe duration is: " + this.duration + " minutes";
+        let str = "\nMovie title: " + this.title + "\nPremiere Year: " + this.year + "\nDuration: " + this.duration + " minutes\n"+this.castToString();
         return str
     }
-
 }
+/**
+ * 
+ * 
+ * @class Logger
+ * Class for exercise 6 it just log something in the console
+ */
 class Logger {
     log(info) {
         console.log(info);
+    }
+}
+class Actor {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
 }
 
@@ -155,6 +189,19 @@ function trySocial() {
     Object.assign(movie, Social);
     movie.share('Jorge');
     movie.like('Pedro')
+}
+function tryActors(){
+    let terminator = new Movie('Terminator I', 1985, 60);
+    let arnold = new Actor('Arnold Schwarzenegger', 50);
+    let otherCast = [
+    new Actor('Paul Winfield', 50),
+    new Actor('Michael Biehn', 50),
+    new Actor('Linda Hamilton', 50)
+    ];
+
+    terminator.addCast(arnold);
+    terminator.addCast(otherCast);
+    console.log(terminator.tostring())
 }
 
 
