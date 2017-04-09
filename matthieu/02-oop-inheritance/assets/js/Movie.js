@@ -1,5 +1,8 @@
 import EventEmitter from './EventEmitter';
 
+//Movie class
+// play,pause,resume methods emits corresponding events, 1rst parameter is event id, 2nd parameter is information that we want to show about event
+
 class Movie extends EventEmitter
 {
   constructor(title, year, duration) {

@@ -3,7 +3,7 @@
 class EventEmitter 
 {
   constructor() {
-    this.listeners = new Map();
+    this.listeners = new Map();  //listeners array
   }
 
   //label:  identifies the type of notifications the listener wants to receive
@@ -37,10 +37,13 @@ class EventEmitter
     return false;
   }
 
+  //emit method
+  //1rst parameter is the event id we receive
+  //2nd parameter is the information about event that we show 
   emit(label, ...args) {
-    let listeners = this.listeners.get(label);
+    let listeners = this.listeners.get(label);  //we get all listeners events that correspond to the event id we received
     if (listeners && listeners.length) {
-      listeners.forEach((listener) => {
+      listeners.forEach((listener) => {  //anonym function, we call the function asociated with this event
         listener(...args);
       });
       return true;

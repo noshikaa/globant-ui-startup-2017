@@ -1,4 +1,6 @@
 
+//Actor class
+
 class Actor {
   constructor(name, age) {
     this.name = name;
