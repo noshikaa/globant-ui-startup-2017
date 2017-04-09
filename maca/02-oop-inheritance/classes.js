@@ -1,9 +1,25 @@
+window.onload = function(){
+  testEx4();
+  testEx5();
+  testEx6();
+  testEx8();
+}
 
-//Ex 3
+
+//Exercise 3
+/**
+ * Determines if an object is a function
+ * 
+ * @return {Boolean}
+ */
 let isFunction = function(obj) {  
     return typeof obj == 'function' || false;
   };
 
+
+/**
+ * The EventEmitter class has the methods for subscribing (on()), deleting (off()) and emitting (emit()) events. 
+ */
 class EventEmitter  {
 
   constructor() {
@@ -51,8 +67,21 @@ class EventEmitter  {
   }
 }
 
-//ex 4
+//Exercise 4
+
+
 class Movie extends EventEmitter{
+ 
+/**
+ * 
+ * Suscribes the movie to the pururu and lightOff functions for the play event. 
+ * Creates an empty array cast to store actors
+ * Creates a boolean attribute playing to check if the movie is playing or paused. 
+ *
+ * @param  {String} title
+ * @param  {Number} year
+ * @param  {Number} duration
+ */
   constructor(title, year, duration){
     super();
     this.title = title;
@@ -64,12 +93,21 @@ class Movie extends EventEmitter{
     this.cast = new Array();
   }
 
+
+  /**
+   * Publishes the play event, changes the status of the playing attribute and logs information to the console
+   */
   play(){    
     this.emit("play");
     console.log(this.title + " playing.");
     this.playing = true;
   }
 
+/**
+ *  Checks the status of the playing attribute, to either
+ *  publish the pause event, change the status of the playing attribute and log information to the console;
+ *  or just log information to the console
+ */
   pause(){
     if (this.playing) {
       console.log(this.title + ' paused');
@@ -81,6 +119,12 @@ class Movie extends EventEmitter{
     }
     
   }
+
+/**
+ *  Checks the status of the playing attribute, to either
+ *  publish the resume event, change the status of the playing attribute and log information to the console;
+ *  or just log information to the console
+ */
 
   resume(){
     if (!this.playing) {
@@ -94,6 +138,11 @@ class Movie extends EventEmitter{
     }    
   }  
 
+/**
+ * Adds actor(s) to the cast array of the movie
+ * @param {Actor} cast or
+ * @param {Array} cast
+ */
   addCast(cast){
     if (Array.isArray(cast)){
       cast.forEach((actor) =>  {
@@ -106,20 +155,8 @@ class Movie extends EventEmitter{
 
   }
 
-  //recursive
-  addCast2(cast){
-    if (Array.isArray(cast)){
-      cast.forEach((actor) => {
-        this.addCast(actor)
-      });
-    }
-    else{
-      this.cast.push(cast);      
-    }
-  }
-
   //adds array as an element 
-  addCast3(cast){
+  addCast2(cast){
     this.cast.push(cast);
   }
 
@@ -130,6 +167,7 @@ let lightOff = function lightOff(){
     console.log("Luz apagada");
   }
 
+
 let lightOn = function lightOn(){
     console.log("Luz prendida");
   }
@@ -138,36 +176,43 @@ let pururu = function pururu(){
   console.log("Pururu listo");
 }
 
-let Sherlock = new Movie('Sherlock', 2012, 120);
-//Sherlock.play();
-Sherlock.on("pause", lightOn);
-Sherlock.on("resume", lightOff);
-//Sherlock.pause();
-//Sherlock.resume();
+let testEx4 = function testEx4(){
+  console.log("Test exercise 4")
+  Sherlock = new Movie('Sherlock', 2012, 120);    //global, to use it in other test cases
+  Sherlock.play();
+  Sherlock.on("pause", lightOn);
+  Sherlock.on("resume", lightOff);
+  Sherlock.pause();
+  Sherlock.resume();
 
-//Ex 5
+}
+
+//Exercise 5
 class Logger {
   log(info){
     console.log(info + " event emited");  
   }
 }
 
-let logger = new Logger();
-/*Sherlock.on("play", logger.log);     
-Sherlock.on("pause", logger.log); 
-Sherlock.on("resume", logger.log); 
-Sherlock.play();
-Sherlock.pause();
-Sherlock.pause();
-Sherlock.resume();
-Sherlock.resume();*/
+let testEx5 = function testEx5(){
+  console.log("Test exercise 5")  
+  let logger = new Logger();
+  Sherlock.on("play", logger.log);     
+  Sherlock.on("pause", logger.log); 
+  Sherlock.on("resume", logger.log); 
+  Sherlock.play();
+  Sherlock.pause();
+  Sherlock.pause();
+  Sherlock.resume();
+  Sherlock.resume();
+}
 
-let iceAge = new Movie('Ice Age', 2008, 90);
-iceAge.play();
-
-
-//Ex 6
-
+//Exercise 6
+/**
+ * Object with two functions to share or like a movie object. 
+ * @type {Object}
+ * 
+ */
 let Social = {  
 
   share: function(friendName){
@@ -179,11 +224,18 @@ let Social = {
   }
 }
 
-Object.assign(iceAge, Social);
-iceAge.like("Ana");
-iceAge.share("Pedro");
+let testEx6 = function testEx6(){
+  console.log("Test exercise 6")
+  iceAge = new Movie('Ice Age', 2008, 90);   //global, to use it in other test cases
+  iceAge.play();
+  Object.assign(iceAge, Social);
+  iceAge.like("Ana");
+  iceAge.share("Pedro");
 
-//Ex 7
+}
+
+
+//Exercise 7
 
 class Actor {
   constructor(name, age){
@@ -193,21 +245,34 @@ class Actor {
 
 }
 
-//test Ex 8
-let arnold = new Actor('Arnold Schwarzenegger', 50);
-let will = new Actor('Will Smith', 52);
-let otherCast = [
-  new Actor('Paul Winfield', 50),
-  new Actor('Michael Biehn', 50),
-  new Actor('Linda Hamilton', 50)
-];
+//test Exercise 8
 
-iceAge.addCast(arnold);
-//console.log(iceAge.cast);
+let testEx8 = function testEx8(){
+  console.log("Test exercise 8")
+  let arnold = new Actor('Arnold Schwarzenegger', 50);
+  let will = new Actor('Will Smith', 52);
+  let otherCast = [
+    new Actor('Paul Winfield', 50),
+    new Actor('Michael Biehn', 50),
+    new Actor('Linda Hamilton', 50)
+  ];
+  let moreCast = [
+    new Actor('Bruce Willis', 62),
+    new Actor('Jason Statham', 49)
+  ];
 
-iceAge.addCast3(otherCast);
-console.log(iceAge.cast);
+  iceAge.addCast(arnold);
+  console.log(iceAge.cast);
 
-iceAge.addCast2(will);
-console.log(iceAge.cast);
+  iceAge.addCast(otherCast);
+  console.log(iceAge.cast);
+
+  iceAge.addCast2(will);
+  console.log(iceAge.cast);
+
+  iceAge.addCast2(moreCast);
+  console.log(iceAge.cast);
+
+}
+
 
