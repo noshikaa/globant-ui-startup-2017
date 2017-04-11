@@ -1,42 +1,9 @@
 
-
-
-
-/*
-[class$="r"] {
-    background: magenta;
-}*/
-/*
-:not(class$="r")[class*="a"]{
-		 background: blue;
-}*/
-/*
-[class*="nav"] {
-	
-    background: blue;
-}
-
-[class="header"] {
-	
-    background: magenta;
-}
-
-[class="aside"] {
-	
-    background: green;
-}
-
-[class="footer"] {
-	
-    background: purple;
-}*/
-
-
-
 html {
     height: 100%;
     width: 100%;
 }
+
 body {
 	 font: bold 14px Verdana, Arial, sans-serif;
 	margin-bottom: 120px;

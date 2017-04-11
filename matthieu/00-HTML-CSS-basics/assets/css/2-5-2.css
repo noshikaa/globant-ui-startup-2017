@@ -1,14 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
 html {
     height: 100%;
     width: 100%;
@@ -56,10 +46,6 @@ p{
 }
 
 
-
-
-
-
 .imagetext{
 	font-size: 20px;
 	position:absolute;
@@ -105,9 +91,8 @@ p{
 }
 
 
-@media screen and (max-width: 1140px) 
-{
-    body {
+@media screen and (max-width: 1140px) {
+    body{
         background-color: blue;
 		text-align: center;
     }
@@ -115,7 +100,7 @@ p{
    .showcase{
 	   float:none;
 	   margin-top: 40px;
-	     margin-left: 0px;
+	   margin-left: 0px;
    }
 
 
@@ -126,23 +111,18 @@ p{
 	width:90%;
 	margin-top: 40px;
 	font-size:18px;
-		margin-right:0px;
+	margin-right:0px;
    }
 
    .pictures{
-	position:relative;
 	top:220px;
-	left:0px;
-	display:inline-block;
-}
-
+	}
 
 }
 
 
 
-@media screen and (max-width: 870px) 
-{
+@media screen and (max-width: 870px) {
     body {
         background-color: lightgreen;
 		
@@ -151,23 +131,18 @@ p{
 	 .showcase{
 	   float:none;
 	   margin-top: 40px;
-	    margin-left: 0px;
+	   margin-left: 0px;
    }
 
 	 .pictures{
-	position:relative;
 	top:220px;
-	left:0px;
-	display:inline-block;
-}
-
+	}
 
 }
 
 
 
-@media screen and (max-width: 635px) 
-{
+@media screen and (max-width: 635px) {
  body {
         background-color: red;
 		
@@ -189,11 +164,8 @@ p{
    }
 
     .pictures{
-	position:relative;
 	top:260px;
-	left:0px;
-	display:inline-block;
-}
+	}
 
 }
 
