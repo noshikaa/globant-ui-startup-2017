@@ -1,8 +1,13 @@
 
 .wrapper{
-    text-align: -webkit-center;
+    width:200px;
+    margin:auto;
 }
 
 .button{
-    margin: 20px;
+    margin-top: 20px;
+}
+
+table, td{
+    border:1px solid black;
 }

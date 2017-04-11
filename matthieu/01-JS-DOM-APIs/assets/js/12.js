@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   //we create the event for the matrix button button click
   document.getElementById("matrixbutton").addEventListener("click", matrixbuttonclick);
   
-
   });
 
 function matrixbuttonclick()
@@ -31,15 +30,32 @@ function insertmatrix(matrix)
   if((dimentions[0] == 0) || (dimentions[1] == 0)) return;
   else
   {
-    newtable = document.createElement("table");
-    
+    let newtable = document.getElementById("matrix");
+
+    // Create an empty <tr> element and add it to the 1st position of the table:
+    newtable.insertRow(0);
+
+    for ( let y=0; y<dimentions[0]; y++ ) 
+    {
+      let row = newtable.insertRow(y);
+      for ( let x=0; x<dimentions[1]; x++ ) 
+      {
+         let cell = row.insertCell(x);
+         cell.innerText = matrix[y][x];
+      }
+    }
+   
+  }
+/*
     htmltable += "<table border=\"1\">";
 
       for ( let y=0; y<dimentions[0]; y++ ) 
       {
+        
         htmltable += "<tr>";
         for ( let x=0; x<dimentions[1]; x++ ) 
         { 
+          // console.log(matrix[y][x]);
             htmltable += "<th>";
             htmltable += matrix[y][x];
             htmltable += "</th>";
@@ -47,10 +63,10 @@ function insertmatrix(matrix)
         htmltable += "</tr>";
       }
       htmltable += "</table>";
-  }
+  }*/
 
   
-document.getElementById("matrix").innerHTML = htmltable;
+
 
 
  
