@@ -23,8 +23,7 @@
   
 
 
-function chucknorrisbuttonclick()
-{
+function chucknorrisbuttonclick(){
   let config = {url:"http://api.icndb.com/jokes/random", mimetype:"text/plain; charset=x-user-defined"};
 
 
@@ -53,8 +52,7 @@ function chucknorrisbuttonclick()
 }
 
 
-function searchbuttonclick()
-{
+function searchbuttonclick(){
   let config = {url:"https://api.github.com/search/repositories?q=\""+document.getElementById('search').value+"\"", mimetype:"text/plain; charset=x-user-defined"};
 
    document.getElementById("middlesection").innerHTML = "";
