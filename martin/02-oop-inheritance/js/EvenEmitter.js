@@ -59,14 +59,12 @@ class EventEmitter {
 
       while (i < length && !found) {
         if (this.events[event][i] === callback) {
-          key = i;
-          found = true;
-        }
+          //having the location in the array, remove the callback.
+          this.events[event].splice(i, 1);
+          found = true;         
+        } else console.error("the 'callback' cannot be found");
         i++;
       }
-      //having the location in the array, remove the callback.
-      if (key > -1) this.events[event].splice(key, 1);
-      else console.error("the 'callback' cannot be found");
     }
   }
 }
