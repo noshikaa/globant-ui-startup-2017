@@ -13,7 +13,7 @@ window.onload = function(){
  * @return {Boolean}
  */
 let isFunction = function(obj) {  
-    return typeof obj == 'function' || false;
+    return typeof obj == 'function';
   };
 
 
@@ -155,10 +155,6 @@ class Movie extends EventEmitter{
 
   }
 
-  //adds array as an element 
-  addCast2(cast){
-    this.cast.push(cast);
-  }
 
 }
 
