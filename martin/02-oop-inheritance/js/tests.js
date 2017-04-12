@@ -1,5 +1,4 @@
 import "Social";
-import "EventEmitter";
 import "Actor";
 import "Movie";
 import "Logger";
