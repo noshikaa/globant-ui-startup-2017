@@ -25,13 +25,13 @@ function matrixbuttonclick()
 function insertmatrix(matrix)
 {
   let dimentions = [ matrix.length, matrix[0].length ]; // dimentions[0] -> Y, dimentions[1] -> X
-  let htmltable = "";
+  
 
   if((dimentions[0] == 0) || (dimentions[1] == 0)) return;
   else
   {
-    let newtable = document.getElementById("matrix");
-
+    
+    newtable = document.createElement('table');
     // Create an empty <tr> element and add it to the 1st position of the table:
     newtable.insertRow(0);
 
@@ -44,29 +44,8 @@ function insertmatrix(matrix)
          cell.innerText = matrix[y][x];
       }
     }
-   
+   document.getElementById("matrix").appendChild(newtable);
   }
-/*
-    htmltable += "<table border=\"1\">";
-
-      for ( let y=0; y<dimentions[0]; y++ ) 
-      {
-        
-        htmltable += "<tr>";
-        for ( let x=0; x<dimentions[1]; x++ ) 
-        { 
-          // console.log(matrix[y][x]);
-            htmltable += "<th>";
-            htmltable += matrix[y][x];
-            htmltable += "</th>";
-        }
-        htmltable += "</tr>";
-      }
-      htmltable += "</table>";
-  }*/
-
-  
-
 
 
  
