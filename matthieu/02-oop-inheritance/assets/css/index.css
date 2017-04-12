@@ -1,33 +1,26 @@
 
-
-
-
-
-
-
-
 html {
     height: 100%;
     width: 100%;
 }
+
 body {
-	 font: bold 14px Verdana, Arial, sans-serif;
+	font: bold 14px Verdana, Arial, sans-serif;
 	margin-bottom: 120px;
     height: 100%;
     width: 100%;
-   
 }
 
 
 footer {
-	 background: purple;
+  background: purple;
   position: absolute;
   bottom: 0px;
   left: 0px;
   height: 20px;
   width: 100%;
   text-align:center;
-	font-size:10px;
+  font-size:10px;
 }
 
 
@@ -41,10 +34,7 @@ header{
 	text-align:center;
 	width:100%;
 	font-size:46px;
-	
-
 }
-
 
 
 p{
