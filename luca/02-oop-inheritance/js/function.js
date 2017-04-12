@@ -1,5 +1,3 @@
-import Social from "./Social";
-import EventEmitter from "./EventEmitter";
 import Actor from "./Actor";
 import Movie from "./Movie";
 import Logger from "./Logger";
