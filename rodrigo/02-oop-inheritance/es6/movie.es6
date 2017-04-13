@@ -1,4 +1,6 @@
 /*jshint esversion: 6 */
+
+import EventEmitter from "./eventemitter.es6";
 /**
  * Class representing a Movie, extends from EventEmitter to use its methods (emit in this case)
  */

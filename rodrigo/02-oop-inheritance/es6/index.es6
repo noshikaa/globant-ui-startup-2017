@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-import EventEmitter from "./eventemitter.es6";
+
 import Actor from "./actor.es6";
 import Movie from "./movie.es6";
 import Logger from "./logger.es6";
