@@ -52,7 +52,6 @@ class EventEmitter {
   off(event, callback) { //we pass the event and the function/method to remove from the events array.
     if (typeof this.events[event] === 'object') { //check if the event exists.
       //search every event in the array until match, and remember the key location. 
-      let key = -1;
       let i = 0;
       let length = this.events[event].length;
       let found = false;
