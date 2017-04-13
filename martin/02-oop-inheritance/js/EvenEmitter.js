@@ -61,7 +61,8 @@ class EventEmitter {
           //having the location in the array, remove the callback.
           this.events[event].splice(i, 1);
           found = true;         
-        } else console.error("the 'callback' cannot be found");
+        } else 
+          console.error("the 'callback' cannot be found");
         i++;
       }
     }
