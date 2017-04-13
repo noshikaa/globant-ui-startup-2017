@@ -1,4 +1,8 @@
 
+let isFunction = function(obj) {
+      return typeof obj == 'function' || false;
+    };
+
 
 class EventEmitter 
 {
@@ -14,9 +18,7 @@ class EventEmitter
   }
 
   off(label, callback) { //removeListener
-    let isFunction = function(obj) {
-      return typeof obj == 'function' || false;
-    };
+   
 
     let listeners = this.listeners.get(label),
       index;

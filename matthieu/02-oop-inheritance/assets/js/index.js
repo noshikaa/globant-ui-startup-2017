@@ -6,8 +6,6 @@ import Actor from './Actor';
 
 
 
-
-
 //we instanciate our Logger class
 let logger = new Logger();
 
