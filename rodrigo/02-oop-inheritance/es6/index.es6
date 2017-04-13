@@ -20,7 +20,6 @@ let social = {
   /**
    * [Share function, outputs a console.log]
    * @param  {string} friendName [Name of the person that shares the Movie]
-   * @return {[log]}            [returns a console log with the name of the person and the movie it shared]
    * this.title refers to the title of the Movie
    */
     share: function(friendName) {
@@ -29,7 +28,6 @@ let social = {
     /**
      * [Same as the Share function]
      * @param  {string} friendName [Name of the person that likes the Movie]
-     * @return {[type]}            [returns a console log with the name of the person and the movie it likes]
      */
     like: function(friendName) {
         console.log(friendName + " likes " + this.title + ".");

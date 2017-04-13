@@ -17,6 +17,10 @@ class EventEmitter {
     this.listeners.get(label).push(callback);
   }
 
+  let isFunction = function(obj) {
+    return typeof obj == 'function';
+  };
+  
 /**
  * [Unsubscribes the object]
  * @param  {[string]}   label    [identifies the type of notifications the listener wants to receive]
@@ -24,10 +28,6 @@ class EventEmitter {
  * @return {[type|boolean]}            [returns if the object is a function | false]
  */
   off(label, callback) {
-    let isFunction = function(obj) {
-      return typeof obj == 'function' || false;
-    };
-
     let listeners = this.listeners.get(label),
       index;
 /**
