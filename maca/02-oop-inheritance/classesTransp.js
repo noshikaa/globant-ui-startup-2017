@@ -21,24 +21,10 @@ window.onload = function () {
   testEx8();
 };
 
-var lightOff = function lightOff() {
-  console.log("Luz apagada");
-};
-
-var lightOn = function lightOn() {
-  console.log("Luz prendida");
-};
-
-var pururu = function pururu() {
-  console.log("Pururu listo");
-};
-
 var testEx4 = function testEx4() {
   console.log("Test exercise 4");
-  Sherlock = new _Movie2.default('Sherlock', 2012, 120); //global, to use it in other test cases
+  var Sherlock = new _Movie2.default('Sherlock', 2012, 120); //global, to use it in other test cases
   Sherlock.play();
-  Sherlock.on("pause", lightOn);
-  Sherlock.on("resume", lightOff);
   Sherlock.pause();
   Sherlock.resume();
 };
@@ -75,7 +61,7 @@ var Social = {
 
 var testEx6 = function testEx6() {
   console.log("Test exercise 6");
-  iceAge = new _Movie2.default('Ice Age', 2008, 90); //global, to use it in other test cases
+  var iceAge = new _Movie2.default('Ice Age', 2008, 90); //global, to use it in other test cases
   iceAge.play();
   Object.assign(iceAge, Social);
   iceAge.like("Ana");

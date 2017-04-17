@@ -9,25 +9,10 @@ window.onload = function(){
   testEx8();
 }
 
-let lightOff = function lightOff(){
-    console.log("Luz apagada");
-  }
-
-
-let lightOn = function lightOn(){
-    console.log("Luz prendida");
-  }
-
-let pururu = function pururu(){
-  console.log("Pururu listo");
-}
-
 let testEx4 = function testEx4(){
   console.log("Test exercise 4")
-  Sherlock = new Movie('Sherlock', 2012, 120);    //global, to use it in other test cases
+  let Sherlock = new Movie('Sherlock', 2012, 120);    
   Sherlock.play();
-  Sherlock.on("pause", lightOn);
-  Sherlock.on("resume", lightOff);
   Sherlock.pause();
   Sherlock.resume();
 
@@ -35,6 +20,7 @@ let testEx4 = function testEx4(){
 
 let testEx5 = function testEx5(){
   console.log("Test exercise 5")  
+  let Sherlock = new Movie('Sherlock', 2012, 120);    
   let logger = new Logger();
   Sherlock.on("play", logger.log);     
   Sherlock.on("pause", logger.log); 
@@ -65,7 +51,7 @@ let Social = {
 
 let testEx6 = function testEx6(){
   console.log("Test exercise 6")
-  iceAge = new Movie('Ice Age', 2008, 90);   //global, to use it in other test cases
+  let iceAge = new Movie('Ice Age', 2008, 90);   
   iceAge.play();
   Object.assign(iceAge, Social);
   iceAge.like("Ana");
@@ -77,6 +63,7 @@ let testEx6 = function testEx6(){
 
 let testEx8 = function testEx8(){
   console.log("Test exercise 8")
+  let iceAge = new Movie('Ice Age', 2008, 90);
   let arnold = new Actor('Arnold Schwarzenegger', 50);
   let will = new Actor('Will Smith', 52);
   let otherCast = [
