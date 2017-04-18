@@ -1,4 +1,4 @@
-
+import EventEmitter from './EventEmitter';
 
 /**
  * 

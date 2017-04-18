@@ -4,10 +4,10 @@ import Logger from './Logger';
 import Actor from './Actor';
 
 window.addEventListener("load", function () {
-    //tryMovie();
-    //tryEventEmitter();
-    //tryTogether();
-    //trySocial();
+    tryMovie();
+    tryEventEmitter();
+    tryTogether();
+    trySocial();
     tryActors();
 })
 /**
