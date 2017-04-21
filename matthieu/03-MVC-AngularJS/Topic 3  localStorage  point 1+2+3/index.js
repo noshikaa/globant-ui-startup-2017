@@ -43,11 +43,12 @@ function handleFileSelect(evt) {
 //set localstorage
 window.document.onload = function(){
 localStorage.setItem("textBox", "");
+//initial value of textBox
+document.getElementById("textBox").value = localStorage.getItem("textBox");
 };
 
 
-//initial value of textBox
-document.getElementById("textBox").value = localStorage.getItem("textBox");
+
 
 
 // CLEAR BUTTON
