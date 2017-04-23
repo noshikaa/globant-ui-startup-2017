@@ -41,12 +41,12 @@ window.onload = function ()
 
   // CLEAR BUTTON CLICK EVENT
   document.getElementById("clearButton").addEventListener("click", function( event ) {
-      clear();
+      database.clear();
     }, false);
 
     //SAVE BUTTON CLICK EVENT
   document.getElementById("saveButton").addEventListener("click", function( event ) {
-      update();
+      database.update();
     }, false);
 
     //TEXT BOX ORIGINAL VALUE REFRESHED ON PAGE LOAD
@@ -122,7 +122,7 @@ class DB {
     request.onsuccess = function() {
           console.log('Text cleared!');
         };
-   this.read();
+   database.read();
   };
 
 }
