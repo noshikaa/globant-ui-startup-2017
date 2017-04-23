@@ -3,9 +3,9 @@
     evt.stopPropagation();
     evt.preventDefault();
 
-    var files = evt.dataTransfer.files; // FileList object.
+    let files = evt.dataTransfer.files; // FileList object.
     // files is a FileList of File objects. List some properties.
-    var read = new FileReader();
+    let read = new FileReader();
 
     //at the end of the file load, we put the text value in textbox
     read.onloadend = function(){
@@ -13,7 +13,7 @@
     }
 
     //in case we have multiple files
-    for (var i = 0, f; f = files[i]; i++) {
+    for (let i = 0, f; f = files[i]; i++) {
     read.readAsBinaryString(f);
     }
     
@@ -26,6 +26,6 @@
   }
 
   // Setup the dnd listeners.
-  var dropZone = document.getElementById('textBox');
+  let dropZone = document.getElementById('textBox');
   dropZone.addEventListener('dragover', handleDragOver, false);
   dropZone.addEventListener('drop', handleFileSelect, false);
