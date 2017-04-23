@@ -1,45 +1,9 @@
 
 
-
-
-window.onload = function ()
+window.onload = function()
 {
-
-  //DRAG AND DROP A FILE ON TEXTBOX FUNCTION
-  function handleFileSelect(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
-
-        let files = evt.dataTransfer.files; // FileList object.
-        // files is a FileList of File objects. List some properties.
-        let reader = new FileReader();
-
-        reader.readAsText(files[0]);
-
-        reader.onload = (function(theFile) {
-          return function(e) {
-            let innerText = document.getElementById("textBox");
-            innerText.innerHTML = e.target.result;
-          };
-        })(files[0]);
-      }
-      /*
-      * the drag effect 
-      * @param {any} evt 
-      */
-      function handleDragOver(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
-        evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
-      }
-      // Setup the dnd listeners.
-      var dropZone = document.getElementById("textBox");
-      dropZone.addEventListener('dragover', handleDragOver, false);
-      dropZone.addEventListener('drop', handleFileSelect, false);
-
-
-
-  // CLEAR BUTTON CLICK EVENT
+  
+ // CLEAR BUTTON CLICK EVENT
   document.getElementById("clearButton").addEventListener("click", function( event ) {
       database.clear();
     }, false);
@@ -51,7 +15,7 @@ window.onload = function ()
 
     //TEXT BOX ORIGINAL VALUE REFRESHED ON PAGE LOAD
    database.read();
-} 
+}
 
 
 
@@ -67,9 +31,9 @@ class DB {
  read() 
  {
   
-    var transaction = db.transaction(["text"]);
-    var objectStore = transaction.objectStore("text");
-    var request = objectStore.get("00");
+    let transaction = db.transaction(["text"]);
+    let objectStore = transaction.objectStore("text");
+    let request = objectStore.get("00");
             
     request.onerror = function(event) {
          alert("Unable to retrieve text from database!");
@@ -91,15 +55,15 @@ class DB {
   //Update text value from textbox in DB
  update() {
 
-  var transaction = db.transaction('text', 'readwrite');
-  var store = transaction.objectStore('text');
-  //var index = store.index('00');
+  let transaction = db.transaction('text', 'readwrite');
+  let store = transaction.objectStore('text');
+  //let index = store.index('00');
  
     store.openCursor().onsuccess = function(event){
-    var cursor = event.target.result;
-    var updateData = cursor.value;
+    let cursor = event.target.result;
+    let updateData = cursor.value;
     updateData.text = document.getElementById("textBox").value;
-    var request = cursor.update(updateData);
+    let request = cursor.update(updateData);
     request.onsuccess = function() {
           console.log('Text updated!');
         };
@@ -110,15 +74,15 @@ class DB {
 //Clear texbox and text entry in DB
  clear() {
 
-  var transaction = db.transaction('text', 'readwrite');
-  var store = transaction.objectStore('text');
-  //var index = store.index('00');
+  let transaction = db.transaction('text', 'readwrite');
+  let store = transaction.objectStore('text');
+  //let index = store.index('00');
  
     store.openCursor().onsuccess = function(event){
-    var cursor = event.target.result;
-    var updateData = cursor.value;
+    let cursor = event.target.result;
+    let updateData = cursor.value;
     updateData.text = "";
-    var request = cursor.update(updateData);
+    let request = cursor.update(updateData);
     request.onsuccess = function() {
           console.log('Text cleared!');
         };
@@ -153,8 +117,8 @@ if (!window.indexedDB) {
 const textData = [
       { id: "00", text: "" }
 ];
-var db;
-var request = window.indexedDB.open("textDatabase", 1);
+let db;
+let request = window.indexedDB.open("textDatabase", 1);
          
 request.onerror = function(event) {
      console.log("error: ");
@@ -166,10 +130,10 @@ request.onsuccess = function(event) {
 };
          
 request.onupgradeneeded = function(event) {
-     var db = event.target.result;
-     var objectStore = db.createObjectStore("text", {keyPath: "id"});
+     let db = event.target.result;
+     let objectStore = db.createObjectStore("text", {keyPath: "id"});
             
-     for (var i in textData) {
+     for (let i in textData) {
          objectStore.add(textData[i]);
       }
 }
@@ -182,10 +146,10 @@ request.onupgradeneeded = function(event) {
  //UNUSED, read all entries from DB        
 function readAll() {
   
-      var objectStore = db.transaction("employee").objectStore("employee");
+      let objectStore = db.transaction("employee").objectStore("employee");
             
       objectStore.openCursor().onsuccess = function(event) {
-      var cursor = event.target.result;
+      let cursor = event.target.result;
                
       if (cursor) {
           alert("Name for id " + cursor.key + " is " + cursor.value.name + ", Age: " + cursor.value.age + ", Email: " + cursor.value.email);
@@ -200,7 +164,7 @@ function readAll() {
 
 //UNUSED, add new entrie to DB
 function add() {
-     var request = db.transaction(["text"], "readwrite")
+     let request = db.transaction(["text"], "readwrite")
      .objectStore("text")
      .add({ id: "00", text: document.getElementById("textBox").value });
             
@@ -215,7 +179,7 @@ function add() {
 
 //UNUSED, remove an entry in DB  
 function remove() {
-    var request = db.transaction(["text"], "readwrite")
+    let request = db.transaction(["text"], "readwrite")
     .objectStore("text")
     .delete("00");
             
