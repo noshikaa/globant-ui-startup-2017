@@ -1,4 +1,4 @@
-
+import EventEmitter from './EventEmitter'
 import Movie from './Movie';
 import Logger from './Logger';
 import Actor from './Actor';

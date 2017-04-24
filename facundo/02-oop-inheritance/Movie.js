@@ -1,5 +1,5 @@
 import EventEmitter from './EventEmitter';
-
+import Actor from './Actor'
 /**
  * 
  * 
