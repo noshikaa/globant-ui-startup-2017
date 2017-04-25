@@ -13,10 +13,15 @@
 
 
 <body>
-      <textarea type="text" placeholder="Start typing..." id="textBox"></textarea>
-      <button id="saveButton">Save text</button>
-      <button id="clearButton">Clear All</button>
-        
+      <form class="formulary">
+            <label for="textBox"></label>
+            <textarea type="text" placeholder="Start typing..." id="textBox" name="textBox"></textarea>
+            <label for="saveButton"></label>
+            <button id="saveButton" name="saveButton" class="button">Save text</button>
+            <label for="clearButton"></label>
+            <button id="clearButton" name="clearButton" class="button">Clear All</button>
+      </form>
+      
        <!-- JAVASCRIPT -->
       <script src="dragAndDrop.js"></script>
 </body>
